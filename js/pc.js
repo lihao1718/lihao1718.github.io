@@ -5,6 +5,7 @@ define([], function(){
 		var $jumpLink = $(".half-header-menu");
 
 		return {
+			
 			show: function(){
 				$jumpLink.removeClass("hide");
 			},
@@ -12,7 +13,7 @@ define([], function(){
 				$jumpLink.addClass("hide");
 			},
 			init: function(){
-				
+				$jumpLink.addClass("hide");
 			}
 		}
 	})();
