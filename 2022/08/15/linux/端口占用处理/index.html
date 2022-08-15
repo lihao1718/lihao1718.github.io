@@ -3,22 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tags | 我是标题</title>
+  <title>端口占用处理 | 我是标题</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日常记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://li1718.top/tags/index.html">
+  <meta name="description" content="windows端口占用 查看被占用端口对应的PIDnetstat -aon|findstr “端口” 查看是哪个进程或者程序占用了我们预期端口tasklist|findstr PID 将占用端口的进程终止taskkill &#x2F;f &#x2F;t &#x2F;im 进程&#x2F;PID  linux 端口占用根据进程名查询进程ps -ef |grep redis根据端口号查询进程 12netstat -tunlp |6379ls">
+<meta property="og:type" content="article">
+<meta property="og:title" content="端口占用处理">
+<meta property="og:url" content="http://li1718.top/2022/08/15/linux/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="我是标题">
-<meta property="og:description" content="日常记录">
+<meta property="og:description" content="windows端口占用 查看被占用端口对应的PIDnetstat -aon|findstr “端口” 查看是哪个进程或者程序占用了我们预期端口tasklist|findstr PID 将占用端口的进程终止taskkill &#x2F;f &#x2F;t &#x2F;im 进程&#x2F;PID  linux 端口占用根据进程名查询进程ps -ef |grep redis根据端口号查询进程 12netstat -tunlp |6379ls">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-11T02:20:26.000Z">
-<meta property="article:modified_time" content="2022-08-11T10:41:58.329Z">
+<meta property="article:published_time" content="2022-08-15T11:17:54.724Z">
+<meta property="article:modified_time" content="2022-08-15T11:17:54.724Z">
 <meta property="article:author" content="li">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="我是标题" type="application/atom+xml">
@@ -146,11 +148,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linux/端口占用处理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-  	<time datetime="2022-08-11T02:20:26.000Z" itemprop="datePublished">2022-08-11</time>
+      <a href="/2022/08/15/linux/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E5%A4%84%E7%90%86/" class="article-date">
+  	<time datetime="2022-08-15T11:17:54.724Z" itemprop="datePublished">2022-08-15</time>
 </a>
     </div>
   
@@ -163,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      端口占用处理
       
     </h1>
   
@@ -172,7 +174,15 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li></ul>
+	</div>
+
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
+	</div>
+
 
         
         <div class="clearfix"></div>
@@ -181,13 +191,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="windows端口占用"><a href="#windows端口占用" class="headerlink" title="windows端口占用"></a>windows端口占用</h2><ol>
+<li>查看被占用端口对应的PID<br><code>netstat -aon|findstr “端口”</code></li>
+<li>查看是哪个进程或者程序占用了我们预期端口<br><code>tasklist|findstr PID</code></li>
+<li>将占用端口的进程终止<br><code>taskkill /f /t /im 进程/PID</code></li>
+</ol>
+<h2 id="linux-端口占用"><a href="#linux-端口占用" class="headerlink" title="linux 端口占用"></a>linux 端口占用</h2><p>根据进程名查询进程<br><code>ps -ef |grep redis</code><br>根据端口号查询进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp |6379</span><br><span class="line">lsof -i:6379</span><br></pre></td></tr></table></figure>
+<p>杀死进程<br><code>kill -9 pid</code></p>
+
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/15/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jvm内存结构</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -222,7 +250,7 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
