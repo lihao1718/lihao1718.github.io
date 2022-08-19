@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jvm | 我是标题</title>
+  <title>idea解决maven冲突 | 李浩的学习记录</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jvm学习记录登记">
+  <meta name="description" content="idea解决maven冲突">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jvm">
-<meta property="og:url" content="http://li1718.top/2022/08/15/jvm/jvm-list/index.html">
-<meta property="og:site_name" content="我是标题">
-<meta property="og:description" content="jvm学习记录登记">
+<meta property="og:title" content="idea解决maven冲突">
+<meta property="og:url" content="http://li1718.top/2022/08/20/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/index.html">
+<meta property="og:site_name" content="李浩的学习记录">
+<meta property="og:description" content="idea解决maven冲突">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://li1718.top/images/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E6%88%90.png">
-<meta property="article:published_time" content="2022-08-15T11:17:54.722Z">
-<meta property="article:modified_time" content="2022-08-15T11:17:54.722Z">
+<meta property="og:image" content="http://li1718.top/images/java/maven_exclude.jpg">
+<meta property="article:published_time" content="2022-08-19T16:33:02.171Z">
+<meta property="article:modified_time" content="2022-08-19T16:33:02.171Z">
 <meta property="article:author" content="li">
-<meta property="article:tag" content="-jvm -java">
+<meta property="article:tag" content="maven">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://li1718.top/images/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E6%88%90.png">
+<meta name="twitter:image" content="http://li1718.top/images/java/maven_exclude.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="我是标题" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="李浩的学习记录" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -95,7 +96,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/jvm-java/" style="font-size: 20px;">-jvm -java</a> <a href="/tags/maven-java/" style="font-size: 10px;">-maven -java</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/index/" style="font-size: 20px;">index</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/index/" style="font-size: 15px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 15px;">jvm</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
 					</div>
 				</section>
 				
@@ -149,11 +150,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-jvm/jvm-list" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java/Maven_Jar包冲突" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/08/15/jvm/jvm-list/" class="article-date">
-  	<time datetime="2022-08-15T11:17:54.722Z" itemprop="datePublished">2022-08-15</time>
+      <a href="/2022/08/20/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/" class="article-date">
+  	<time datetime="2022-08-19T16:33:02.171Z" itemprop="datePublished">2022-08-20</time>
 </a>
     </div>
   
@@ -166,7 +167,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jvm
+      idea解决maven冲突
       
     </h1>
   
@@ -176,12 +177,12 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm-java/" rel="tag">-jvm -java</a></li></ul>
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/" rel="tag">maven</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/jvm/">jvm</a>
+	<a class="article-category-link" href="/categories/java/">java</a>
 	</div>
 
 
@@ -192,34 +193,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>jvm学习记录登记</p>
-<span id="more"></span>
-<p><img src="/../../images/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E6%88%90.png" alt="虚拟机组成" title="虚拟机组成"></p>
-<h2 id="类加载与字节码"><a href="#类加载与字节码" class="headerlink" title="类加载与字节码"></a>类加载与字节码</h2><ol>
-<li>类文件结构</li>
-<li>字节码指令</li>
-<li>编译期处理</li>
-<li>类加载阶段</li>
-<li>类加载器</li>
-<li>运行期优化</li>
-<li>类文件结构</li>
-</ol>
-<h2 id="jvm内存结构"><a href="#jvm内存结构" class="headerlink" title="jvm内存结构"></a>jvm内存结构</h2><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。</p>
+        <h2 id="找到冲突jar包"><a href="#找到冲突jar包" class="headerlink" title="找到冲突jar包"></a>找到冲突jar包</h2><span id="more"></span>
 <ol>
-<li>程序计数器</li>
-<li>虚拟机栈</li>
-<li>本地方法栈</li>
-<li>堆</li>
-<li>方法区</li>
+<li>idea下载Maven Helper插件</li>
+<li>打开pom文件中的“Dependency Analyzer”的Tab选项<br> 其中三个选项分别表示如下:<br> Conflicts（查看冲突）<br> All Dependencies as List（列表形式查看所有依赖）<br> All Dependencies as Tree（树形式查看所有依赖）</li>
+<li>当出现冲突需要解决时，下面会显示冲突的信息</li>
 </ol>
-<h2 id="jvm执行引擎-垃圾回收"><a href="#jvm执行引擎-垃圾回收" class="headerlink" title="jvm执行引擎_垃圾回收"></a>jvm执行引擎_垃圾回收</h2><ol>
-<li>如何判断对象可以回收</li>
-<li>垃圾回收算法</li>
-<li>分代垃圾回收</li>
-<li>垃圾回收器</li>
-<li>垃圾回收调优</li>
-</ol>
-<h2 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h2>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>当点击 Exclude 之后，插件自动会在 pom.xml 文件中添加 <exclusion> 相关代码，进行子依赖的排除<br><img src="/../../images/java/maven_exclude.jpg" alt="&#39;子依赖的排除&#39;"></p>
+
       
     </div>
     
@@ -228,18 +209,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/08/15/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          jvm内存结构
+          记录-poi文本替换,图片替换,转PDF
         
       </div>
     </a>
   
   
-    <a href="/2022/08/15/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">idea解决maven冲突</div>
+    <a href="/2022/08/20/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello Hexo</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>记录-poi文本替换,图片替换,转PDF | 李浩的学习记录</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="idea解决maven冲突">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录-poi文本替换,图片替换,转PDF">
+<meta property="og:url" content="http://li1718.top/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/index.html">
+<meta property="og:site_name" content="李浩的学习记录">
+<meta property="og:description" content="idea解决maven冲突">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://li1718.top/images/java/poi_template.jpg">
+<meta property="og:image" content="http://li1718.top/images/java/poi_zipStructure.jpg">
+<meta property="og:image" content="http://li1718.top/images/java/poi_normalImage.jpg">
+<meta property="og:image" content="http://li1718.top/images/java/poi_dislocationImage.jpg">
+<meta property="og:image" content="http://li1718.top/images/java/poi_FormatAdjustment.jpg">
+<meta property="og:image" content="http://li1718.top/images/windows%E5%AD%97%E4%BD%93.jpg">
+<meta property="article:published_time" content="2022-08-19T16:33:02.172Z">
+<meta property="article:modified_time" content="2022-08-19T16:33:02.172Z">
+<meta property="article:author" content="li">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://li1718.top/images/java/poi_template.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="李浩的学习记录" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">li</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle"></p>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/index/" style="font-size: 15px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 15px;">jvm</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="img/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-java/poi_文本替换,图片替换,转PDF" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/" class="article-date">
+  	<time datetime="2022-08-19T16:33:02.172Z" itemprop="datePublished">2022-08-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      记录-poi文本替换,图片替换,转PDF
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/java/">java</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="poi文本替换"><a href="#poi文本替换" class="headerlink" title="poi文本替换"></a>poi文本替换</h2><ol>
+<li>word文档中添加字段<br> <code>$&#123;字段名&#125;</code></li>
+</ol>
+<span id="more"></span>
+<p><img src="/../../images/java/poi_template.jpg" alt="模板字段" title="模板字段"><br>2. 创建文件副本,类型变更为zip格式<br>   从zip的<code>/word</code>目录中取出<code>document.xml</code>文件<br><img src="/../../images/java/poi_zipStructure.jpg" alt="zip结构" title="zip结构"><br>3. jar包导入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;poi&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.freemarker&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;freemarker&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.3.26-incubating&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"> /**</span><br><span class="line">     * 根据模板生成docx文件</span><br><span class="line">     * @param wordCommonDto 数据</span><br><span class="line">     * @param fileName 文件名</span><br><span class="line">     * @throws IOException</span><br><span class="line">     * @throws TemplateException</span><br><span class="line">     */</span><br><span class="line">    public void makeWordByXcode(WordCommonDto wordCommonDto,String fileName) throws IOException, TemplateException &#123;</span><br><span class="line">        /** 初始化配置文件 **/</span><br><span class="line">        Configuration configuration = new Configuration();</span><br><span class="line">        String fileDirectory = basePath+wordCommonDto.getWordType()+&quot;/&quot;;</span><br><span class="line">        /** 加载文件 **/</span><br><span class="line">        configuration.setDirectoryForTemplateLoading(new File(fileDirectory));</span><br><span class="line">        /** 加载模板 **/</span><br><span class="line">        Template template = configuration.getTemplate(&quot;document.xml&quot;);</span><br><span class="line">        /** 准备数据 **/</span><br><span class="line">        Map&lt;String,String&gt; dataMap = new HashMap&lt;String, String&gt;();</span><br><span class="line">        /** 将数据映射为实体类后转为json格式,再转为map 避免字段值为null**/</span><br><span class="line">//        dataMap.put(&quot;phone&quot;,&quot;1&quot;);</span><br><span class="line">//        dataMap.put(&quot;year&quot;,&quot;2&quot;);</span><br><span class="line">//        dataMap.put(&quot;month&quot;,&quot;3&quot;);</span><br><span class="line">//        dataMap.put(&quot;day&quot;,&quot;4&quot;);</span><br><span class="line">        String str = JSONObject.toJSONString(wordCommonDto, SerializerFeature.WriteNullStringAsEmpty);</span><br><span class="line">        dataMap = JSONObject.parseObject(str,Map.class);</span><br><span class="line">        log.info(dataMap.toString());</span><br><span class="line">        /** 指定输出word文件的路径 **/</span><br><span class="line"></span><br><span class="line">        String outFilePath = outPath+fileName+&quot;.xml&quot;;</span><br><span class="line">        File docFile = new File(outFilePath);</span><br><span class="line">        FileOutputStream fos = new FileOutputStream(docFile);</span><br><span class="line">        Writer out = new BufferedWriter(new OutputStreamWriter(fos),10240);</span><br><span class="line">        template.process(dataMap,out);</span><br><span class="line">        if(out != null)&#123;</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            ZipInputStream zipInputStream = ZipUtils.wrapZipInputStream(new FileInputStream(new File(fileDirectory+wordCommonDto.getWordType()+&quot;.zip&quot;)));</span><br><span class="line">            ZipOutputStream zipOutputStream = ZipUtils.wrapZipOutputStream(new FileOutputStream(new File(outPath+fileName+&quot;.docx&quot;)));</span><br><span class="line">            String itemname = &quot;word/document.xml&quot;;</span><br><span class="line">            ZipUtils.replaceItem(zipInputStream, zipOutputStream, itemname, new FileInputStream(new File(outPath+fileName+&quot;.xml&quot;)));</span><br><span class="line">            log.info(&quot;success&quot;);</span><br><span class="line"></span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            log.info(e.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        FileUtil.deleteFile(outPath+fileName+&quot;.xml&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+需要的zip工具类<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStream;</span><br><span class="line">import java.io.OutputStream;</span><br><span class="line">import java.util.zip.ZipEntry;</span><br><span class="line">import java.util.zip.ZipInputStream;</span><br><span class="line">import java.util.zip.ZipOutputStream;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class ZipUtils &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 替换某个 item,</span><br><span class="line">     * @param zipInputStream zip文件的zip输入流</span><br><span class="line">     * @param zipOutputStream 输出的zip输出流</span><br><span class="line">     * @param itemName 要替换的 item 名称</span><br><span class="line">     * @param itemInputStream 要替换的 item 的内容输入流</span><br><span class="line">     */</span><br><span class="line">    public static void replaceItem(ZipInputStream zipInputStream,</span><br><span class="line">                                   ZipOutputStream zipOutputStream,</span><br><span class="line">                                   String itemName,</span><br><span class="line">                                   InputStream itemInputStream</span><br><span class="line">    )&#123;</span><br><span class="line">        //</span><br><span class="line">        if(null == zipInputStream)&#123;return;&#125;</span><br><span class="line">        if(null == zipOutputStream)&#123;return;&#125;</span><br><span class="line">        if(null == itemName)&#123;return;&#125;</span><br><span class="line">        if(null == itemInputStream)&#123;return;&#125;</span><br><span class="line">        //</span><br><span class="line">        ZipEntry entryIn;</span><br><span class="line">        try &#123;</span><br><span class="line">            while((entryIn = zipInputStream.getNextEntry())!=null)</span><br><span class="line">            &#123;</span><br><span class="line">                String entryName =  entryIn.getName();</span><br><span class="line">                ZipEntry entryOut = new ZipEntry(entryName);</span><br><span class="line">                // 只使用 name</span><br><span class="line">                zipOutputStream.putNextEntry(entryOut);</span><br><span class="line">                // 缓冲区</span><br><span class="line">                byte [] buf = new byte[8*1024];</span><br><span class="line">                int len;</span><br><span class="line"></span><br><span class="line">                if(entryName.equals(itemName))&#123;</span><br><span class="line">                    // 使用替换流</span><br><span class="line">                    while((len = (itemInputStream.read(buf))) &gt; 0) &#123;</span><br><span class="line">                        zipOutputStream.write(buf, 0, len);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    // 输出普通Zip流</span><br><span class="line">                    while((len = (zipInputStream.read(buf))) &gt; 0) &#123;</span><br><span class="line">                        zipOutputStream.write(buf, 0, len);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                // 关闭此 entry</span><br><span class="line">                zipOutputStream.closeEntry();</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            //e.printStackTrace();</span><br><span class="line">            close(itemInputStream);</span><br><span class="line">            close(zipInputStream);</span><br><span class="line">            close(zipOutputStream);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 包装输入流</span><br><span class="line">     */</span><br><span class="line">    public static ZipInputStream wrapZipInputStream(InputStream inputStream)&#123;</span><br><span class="line">        ZipInputStream zipInputStream = new ZipInputStream(inputStream);</span><br><span class="line">        return zipInputStream;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 包装输出流</span><br><span class="line">     */</span><br><span class="line">    public static ZipOutputStream wrapZipOutputStream(OutputStream outputStream)&#123;</span><br><span class="line">        ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream);</span><br><span class="line">        return zipOutputStream;</span><br><span class="line">    &#125;</span><br><span class="line">    private static void close(InputStream inputStream)&#123;</span><br><span class="line">        if (null != inputStream)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                inputStream.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    private static void close(OutputStream outputStream)&#123;</span><br><span class="line">        if (null != outputStream)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                outputStream.flush();</span><br><span class="line">                outputStream.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="图片替换"><a href="#图片替换" class="headerlink" title="图片替换"></a>图片替换</h2><p>代码实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * docx文档中图片替换</span><br><span class="line"> * @param file1 图片</span><br><span class="line"> * @param contractno 文件名</span><br><span class="line"> * @throws IOException</span><br><span class="line"> */</span><br><span class="line">public void replaceImages(File file1,String contractno) throws IOException &#123;</span><br><span class="line"></span><br><span class="line">    InputStream docis = new FileInputStream(outPath+contractno+&quot;.docx&quot;);</span><br><span class="line">    String imagePosition = getImagePosition();</span><br><span class="line">    //转成word</span><br><span class="line">    XWPFDocument document = new XWPFDocument(docis);</span><br><span class="line">    try &#123;</span><br><span class="line">        FileInputStream in = new FileInputStream(file1);</span><br><span class="line">        //得到输入流</span><br><span class="line">        //这里的rId4可不是固定的，这个其实就是图片在word文件中的标识，下方会给出获取的方法</span><br><span class="line">        document.getPackagePart().removeRelationship(imagePosition);</span><br><span class="line">        byte[] ba = new byte[in.available()];</span><br><span class="line">        int len = in.read(ba);</span><br><span class="line">        ByteArrayInputStream byteInputStream = new ByteArrayInputStream(ba, 0, len);</span><br><span class="line">        //设置图片</span><br><span class="line">        String ind =document.addPictureData(byteInputStream, XWPFDocument.PICTURE_TYPE_PNG);</span><br><span class="line">        //将图片插入word</span><br><span class="line">        //String ind = document.addPictureData(conn.getInputStream(),XWPFDocument.PICTURE_TYPE_PNG);</span><br><span class="line">        //替换图片</span><br><span class="line">        document.getPackagePart().addRelationship(document.getPackagePart().getRelationship(ind).getTargetURI(), TargetMode.INTERNAL, XWPFRelation.IMAGES.getRelation(), imagePosition);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        log.info(&quot;报错了&quot;);</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    //导出到文件</span><br><span class="line">    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();</span><br><span class="line">    document.write((OutputStream) byteArrayOutputStream);</span><br><span class="line"></span><br><span class="line">    String fileName = &quot;new&quot;+contractno;</span><br><span class="line">    File file = new File(outPath + fileName + &quot;.docx&quot;);</span><br><span class="line">    if (!file.getParentFile().exists()) &#123;</span><br><span class="line">        file.getParentFile().mkdirs();</span><br><span class="line">    &#125;</span><br><span class="line">    FileOutputStream outputStream = new FileOutputStream(outPath + fileName + &quot;.docx&quot;);</span><br><span class="line">    outputStream.write(byteArrayOutputStream.toByteArray());</span><br><span class="line">    outputStream.flush();</span><br><span class="line">    outputStream.close();</span><br><span class="line">    FileUtil.deleteFile(outPath+contractno+&quot;.docx&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="word文档转pdf"><a href="#word文档转pdf" class="headerlink" title="word文档转pdf"></a>word文档转pdf</h2><p>jar包引入<br>    <code>org.apache.poi.xwpf.converter.core</code>包中引用了poi相关的jar包,根据实际情况修改相关依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;fr.opensagres.xdocreport&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;org.apache.poi.xwpf.converter.core&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.6&lt;/version&gt;</span><br><span class="line">    &lt;exclusions&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;poi&lt;/artifactId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;poi-ooxml-schemas&lt;/artifactId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;artifactId&gt;xmlbeans&lt;/artifactId&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.xmlbeans&lt;/groupId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">    &lt;/exclusions&gt;</span><br><span class="line"></span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;fr.opensagres.xdocreport&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;org.apache.poi.xwpf.converter.pdf&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.6&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;fr.opensagres.xdocreport&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;fr.opensagres.xdocreport.itext.extension&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.6&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;itextpdf&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;5.5.10&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;itext-asian&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;5.2.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.pdfbox&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;pdfbox&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.0.13&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>代码实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public String makePdfByXcode(String fileName)&#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        XWPFDocument document=new XWPFDocument(new FileInputStream(new File(outPath+fileName+&quot;.docx&quot;)));</span><br><span class="line">        File outFile=new File(outPath+fileName+&quot;.pdf&quot;);</span><br><span class="line">        outFile.getParentFile().mkdirs();</span><br><span class="line">        OutputStream out=new FileOutputStream(outFile);</span><br><span class="line">        PdfOptions options= PdfOptions.create();  //gb2312</span><br><span class="line">        PdfConverter.getInstance().convert(document,out,options);</span><br><span class="line">        FileUtil.deleteFile(outPath+fileName+&quot;.docx&quot;);</span><br><span class="line">        return pdf;</span><br><span class="line">    &#125;</span><br><span class="line">    catch (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p><strong>无法读取文档中字符</strong><br>打开<code>document.xml</code>检查需替换的字符格式,一个单词可能存在多种格式,重新编写文档,确保格式一致<br><strong>存在多张图片时图片错位</strong><br>正常图片:<br><img src="/../../images/java/poi_normalImage.jpg" alt="正常图片" title="正常图片"><br>错位图片:<br><img src="/../../images/java/poi_dislocationImage.jpg" alt="错位图片" title="错位图片"><br>图片右键&gt;其他布局选项:<br>布局:<br><img src="/../../images/java/poi_FormatAdjustment.jpg" alt="布局" title="布局"><br><strong>linux中文空白</strong><br>原因:linux缺少中文字符<br>将<code>C:\Windows\Fonts</code>内的中文字库复制到服务器<code>/usr/share/fonts</code>下<br>安装字体索引指令<br>  <code>yum install mkfontscale</code><br>建立字体索引信息，更新字体缓存<br><code>mkfontscale &amp;&amp; mkfontdir &amp;&amp; fc-cache -fv</code><br>查看是否按照成功<br><code>fc-list :lang=zh</code><br>重新启动服务,加载字体<br><img src="/../../images/windows%E5%AD%97%E4%BD%93.jpg" alt="win10字体"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/08/20/jvm/jvm-list/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          jvm 概述
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/20/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">idea解决maven冲突</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 li
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

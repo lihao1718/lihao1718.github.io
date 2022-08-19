@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jvm内存结构 | 我是标题</title>
+  <title>jvm 概述 | 李浩的学习记录</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jvm内存结构">
+  <meta name="description" content="jvm学习记录登记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jvm内存结构">
-<meta property="og:url" content="http://li1718.top/2022/08/15/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/index.html">
-<meta property="og:site_name" content="我是标题">
-<meta property="og:description" content="jvm内存结构">
+<meta property="og:title" content="jvm 概述">
+<meta property="og:url" content="http://li1718.top/2022/08/20/jvm/jvm-list/index.html">
+<meta property="og:site_name" content="李浩的学习记录">
+<meta property="og:description" content="jvm学习记录登记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-15T11:17:54.723Z">
-<meta property="article:modified_time" content="2022-08-15T11:17:54.723Z">
+<meta property="og:image" content="http://li1718.top/images/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E6%88%90.png">
+<meta property="article:published_time" content="2022-08-19T16:33:02.172Z">
+<meta property="article:modified_time" content="2022-08-19T16:33:02.172Z">
 <meta property="article:author" content="li">
-<meta property="article:tag" content="-jvm -java">
+<meta property="article:tag" content="jvm">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://li1718.top/images/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E6%88%90.png">
   
-    <link rel="alternative" href="/atom.xml" title="我是标题" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="李浩的学习记录" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -93,7 +96,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/jvm-java/" style="font-size: 20px;">-jvm -java</a> <a href="/tags/maven-java/" style="font-size: 10px;">-maven -java</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/index/" style="font-size: 20px;">index</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/index/" style="font-size: 15px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 15px;">jvm</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
 					</div>
 				</section>
 				
@@ -147,11 +150,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-jvm/jvm内存结构" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jvm/jvm-list" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/08/15/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" class="article-date">
-  	<time datetime="2022-08-15T11:17:54.723Z" itemprop="datePublished">2022-08-15</time>
+      <a href="/2022/08/20/jvm/jvm-list/" class="article-date">
+  	<time datetime="2022-08-19T16:33:02.172Z" itemprop="datePublished">2022-08-20</time>
 </a>
     </div>
   
@@ -164,7 +167,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jvm内存结构
+      jvm 概述
       
     </h1>
   
@@ -174,7 +177,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm-java/" rel="tag">-jvm -java</a></li></ul>
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/" rel="tag">jvm</a></li></ul>
 	</div>
 
         
@@ -190,7 +193,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h2><h2 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h2><h2 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h2><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h2 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h2>
+        <p>jvm学习记录登记</p>
+<span id="more"></span>
+<p><img src="/../../images/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E6%88%90.png" alt="虚拟机组成" title="虚拟机组成"></p>
+<h2 id="类加载与字节码"><a href="#类加载与字节码" class="headerlink" title="类加载与字节码"></a>类加载与字节码</h2><ol>
+<li>类文件结构</li>
+<li>字节码指令</li>
+<li>编译期处理</li>
+<li>类加载阶段</li>
+<li>类加载器</li>
+<li>运行期优化</li>
+<li>类文件结构</li>
+</ol>
+<h2 id="jvm内存结构"><a href="#jvm内存结构" class="headerlink" title="jvm内存结构"></a>jvm内存结构</h2><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。</p>
+<ol>
+<li>程序计数器</li>
+<li>虚拟机栈</li>
+<li>本地方法栈</li>
+<li>堆</li>
+<li>方法区</li>
+</ol>
+<h2 id="jvm执行引擎-垃圾回收"><a href="#jvm执行引擎-垃圾回收" class="headerlink" title="jvm执行引擎_垃圾回收"></a>jvm执行引擎_垃圾回收</h2><ol>
+<li>如何判断对象可以回收</li>
+<li>垃圾回收算法</li>
+<li>分代垃圾回收</li>
+<li>垃圾回收器</li>
+<li>垃圾回收调优</li>
+</ol>
+<h2 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h2>
       
     </div>
     
@@ -199,18 +229,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/08/15/linux/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E5%A4%84%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/08/20/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          端口占用处理
+          jvm内存结构
         
       </div>
     </a>
   
   
-    <a href="/2022/08/15/jvm/jvm-list/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jvm</div>
+    <a href="/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记录-poi文本替换,图片替换,转PDF</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
