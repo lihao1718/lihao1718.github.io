@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>docker安装oracle | 记录</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="拉取镜像：docker pull registry.cn-hangzhou.aliyuncs.com&#x2F;helowin&#x2F;oracle_11g 下载完成后 查看镜像：docker images 创建容器：docker run -d -p 1521:1521 --name oracle11g registry.cn-hangzhou.aliyuncs.com&#x2F;helowin&#x2F;oracle_11g 默认启">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker安装oracle">
+<meta property="og:url" content="http://li1718.top/2023/04/29/linux/docker/docker%E5%AE%89%E8%A3%85oracle/index.html">
+<meta property="og:site_name" content="记录">
+<meta property="og:description" content="拉取镜像：docker pull registry.cn-hangzhou.aliyuncs.com&#x2F;helowin&#x2F;oracle_11g 下载完成后 查看镜像：docker images 创建容器：docker run -d -p 1521:1521 --name oracle11g registry.cn-hangzhou.aliyuncs.com&#x2F;helowin&#x2F;oracle_11g 默认启">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-29T01:54:34.470Z">
+<meta property="article:modified_time" content="2023-06-29T10:28:42.495Z">
+<meta property="article:author" content="li">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="软件安装">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="记录" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="img/avatar.gif" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">li</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle"></p>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/databases/" style="font-size: 11.67px;">databases</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/index/" style="font-size: 11.67px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 13.33px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/tool/" style="font-size: 11.67px;">tool</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13.33px;">记录</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="font-size: 18.33px;">软件安装</a> <a href="/tags/%E8%BE%BE%E6%A2%A6/" style="font-size: 10px;">达梦</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="img/avatar.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-linux/docker/docker安装oracle" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/29/linux/docker/docker%E5%AE%89%E8%A3%85oracle/" class="article-date">
+  	<time datetime="2023-04-29T01:54:34.470Z" itemprop="datePublished">2023-04-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker安装oracle
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="tag">软件安装</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>拉取镜像：<br><code>docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p>
+<p>下载完成后 查看镜像：<br><code>docker images</code></p>
+<p>创建容器：<br><code>docker run -d -p 1521:1521 --name oracle11g registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p>
+<p>默认启动容器方式(2)<br><code>docker run -d -it -p 1521:1521 --name oracle11g --restart=always registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p>
+<p>持久化启动方式如下(3)： </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -it -p 1521:1521 --name oracle --restart=always --mount <span class="built_in">source</span>=oracle_vol,target=/home/oracle/app/oracle/oradata registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</span><br><span class="line"></span><br><span class="line">一般用默认启动方式就可以了，若是需要将数据保存到本地的采用持久化方式。</span><br><span class="line"></span><br><span class="line">--mount表示要将Host上的路径挂载到容器中。</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span>=oracle_vol为Host的持久化卷，若未提前创建会自动创建，可通过docker volume instpect 【容器名】查看volume的具体位置，target为容器中的路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker错误</span><br><span class="line">docker: Error response from daemon: Conflict. The container name &quot;/oracle11g&quot; is already in use by container &quot;7edb8b99791ff4b298a6fa78a7c57be7cd646ab776883b5e07f670ed3506d7bf&quot;. You have to remove (or rename) that container to be able to reuse that name</span><br><span class="line"></span><br><span class="line">docker stop oracle11g</span><br><span class="line"></span><br><span class="line">这里说一下，命令后面的地址一定要是你下载的镜像地址也就是你拉取镜像名字，否则会出现名字已存在等问题！</span><br><span class="line">如果空间不足可以清理数据：</span><br><span class="line">删除所有dangling数据卷（即无用的Volume）：</span><br><span class="line"></span><br><span class="line">docker volume rm $(docker volume ls -qf dangling=true)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">启动容器</span><br><span class="line"></span><br><span class="line">docker start oracle11g</span><br><span class="line"></span><br><span class="line">进入镜像进行配置</span><br><span class="line"></span><br><span class="line">进入oracle的命令环境中。</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it oracle11g bash</span><br><span class="line"></span><br><span class="line">切换到oracle数据库的root 用户下</span><br><span class="line">su root</span><br><span class="line">密码：helowin</span><br><span class="line"></span><br><span class="line">编辑profile文件配置ORACLE环境变量 </span><br><span class="line"></span><br><span class="line">vi /etc/profile</span><br><span class="line"><span class="built_in">export</span> ORACLE_HOME=/home/oracle/app/oracle/product/11.2.0/dbhome_2</span><br><span class="line"><span class="built_in">export</span> ORACLE_SID=lihao</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$ORACLE_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"> 使配置生效</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line">创建软连接</span><br><span class="line"><span class="built_in">ln</span> -s <span class="variable">$ORACLE_HOME</span>/bin/sqlplus /usr/bin</span><br><span class="line">切换到oracle 用户</span><br><span class="line">这里还要说一下，一定要写中间的内条 - 必须要，否则软连接无效</span><br><span class="line">su - oracle</span><br><span class="line">sqlplus /nolog</span><br><span class="line">conn /as sysdba</span><br><span class="line">修改sys、system用户密码：</span><br><span class="line">alter user system identified by li1718;</span><br><span class="line">alter user sys identified by li1718;</span><br><span class="line">alter profile default <span class="built_in">limit</span> PASSWORD_LIFE_TIME UNLIMITED;</span><br><span class="line">创建用户（可选，根据需要）</span><br><span class="line">用一个具有dba权限的用户登录（sysdba)，然后输入以下语句</span><br><span class="line">create user 用户名 identified by 密码;</span><br><span class="line">create user lihao identified by li1718;</span><br><span class="line">grant connect,resource,dba to <span class="built_in">test</span>;</span><br><span class="line">过程中出现的报错需要输入以下内容：</span><br><span class="line">输入：alter database mount;</span><br><span class="line">输入 ：alter database open;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<p>cd $ORACLE_HOME</p>
+<p>find &#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0 -name listener.ora<br>cd &#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_2&#x2F;network&#x2F;admin<br>vi listener.ora</p>
+<pre><code>设置服务器主机名
+  (ADDRESS = (PROTOCOL = TCP)(HOST = DESKTOP-0PNL4C3)(PORT = 1521))
+</code></pre>
+<p>cd &#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_2&#x2F;bin<br>lsnrctl stop<br>lsnrctl start</p>
+<p>查看oracle版本<br><a target="_blank" rel="noopener" href="https://hub.docker.com/_/oraclelinux">https://hub.docker.com/_/oraclelinux</a><br>下载docker pull doctorkirk&#x2F;oracle-19c<br>docker run -d –name <container_name> -p <host_port>:1521 -e ORACLE_SID&#x3D;<sid> -e ORACLE_PDB&#x3D;<pdb_name> -e ORACLE_PWD&#x3D;<password> <image_name>:<tag></tag></image_name></password></pdb_name></sid></host_port></container_name></p>
+<p>docker run -d -it -p 1521:1521 –restart&#x3D;always –name oracle19C –mount source&#x3D;oracle_vol,target&#x3D;&#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;oradata doctorkirk&#x2F;oracle-19c:latest</p>
+<h1><span id="查看oracle-12c启动日志">查看oracle-12c启动日志</span></h1><p>docker logs -f oracle19C</p>
+<p>docker exec -it oracle19C &#x2F;bin&#x2F;bash</p>
+<p>在容器中打开 SQLPlus：在容器的命令行界面上，使用以下命令打开 SQLPlus：</p>
+<p>sqlplus sys&#x2F;li1718@lihao as sysdba</p>
+<p>docker启动镜像doctorkirk&#x2F;oracle-19c后连接数据库实例未启动<br>可能是未找到启动init.ora文件,<code>STARTUP</code>失败</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span> <span class="keyword">as</span> sysdba</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> STARTUP</span><br><span class="line">ORA<span class="number">-01078</span>: failure <span class="keyword">in</span> processing <span class="keyword">system</span> parameters</span><br><span class="line">LRM<span class="number">-00109</span>: could <span class="keyword">not</span> <span class="keyword">open</span> <span class="keyword">parameter</span> file <span class="string">&#x27;/opt/oracle/product/19c/dbhome_1/dbs/initlihao.ora&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>找到init.ora文件复制到该文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -name *.ora</span><br><span class="line"><span class="built_in">cp</span> /opt/oracle/admin/LIHAO/pfile/init.ora /opt/oracle/product/19c/dbhome_1/dbs/initlihao.ora</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/05/30/databases/Activiti5.22.0%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Activiti5.22.0兼容达梦数据库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/25/tool/pdfjs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pdfjs使用及问题</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 li
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

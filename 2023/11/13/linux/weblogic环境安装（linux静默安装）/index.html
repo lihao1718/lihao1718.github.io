@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>记录</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux安装weblogic服务器:contOS7环境: oracle jdk-8u391安装包: WebLogic Server 12.2.1.4oracle地址: 总下载目录   1.安装步骤1.1新增用户,添加文件夹安装weblogic不能用ROOT用户安装,必须先新增用户   12345678adduser weblogicpasswd weblogic#切换用户操作su weblogi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录">
+<meta property="og:url" content="http://li1718.top/2023/11/13/linux/weblogic%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%EF%BC%88linux%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85%EF%BC%89/index.html">
+<meta property="og:site_name" content="记录">
+<meta property="og:description" content="Linux安装weblogic服务器:contOS7环境: oracle jdk-8u391安装包: WebLogic Server 12.2.1.4oracle地址: 总下载目录   1.安装步骤1.1新增用户,添加文件夹安装weblogic不能用ROOT用户安装,必须先新增用户   12345678adduser weblogicpasswd weblogic#切换用户操作su weblogi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-13T14:59:25.642Z">
+<meta property="article:modified_time" content="2023-11-16T08:53:27.646Z">
+<meta property="article:author" content="li">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="记录" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="img/avatar.gif" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">li</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle"></p>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/databases/" style="font-size: 11.67px;">databases</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/index/" style="font-size: 11.67px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 13.33px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/tool/" style="font-size: 11.67px;">tool</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13.33px;">记录</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="font-size: 18.33px;">软件安装</a> <a href="/tags/%E8%BE%BE%E6%A2%A6/" style="font-size: 10px;">达梦</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="img/avatar.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-linux/weblogic环境安装（linux静默安装）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/11/13/linux/weblogic%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%EF%BC%88linux%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85%EF%BC%89/" class="article-date">
+  	<time datetime="2023-11-13T14:59:25.642Z" itemprop="datePublished">2023-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1><span id="linux安装weblogic">Linux安装weblogic</span></h1><p>服务器:contOS7<br>环境: <a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/downloads/">oracle jdk-8u391</a><br>安装包: <a target="_blank" rel="noopener" href="https://www.oracle.com/cn/middleware/technologies/weblogic-server-downloads.html">WebLogic Server 12.2.1.4</a><br>oracle地址: <a target="_blank" rel="noopener" href="https://www.oracle.com/cn/middleware/technologies/weblogic-server-downloads.html">总下载目录</a>  </p>
+<h2><span id="1安装步骤">1.安装步骤</span></h2><h3><span id="11新增用户添加文件夹">1.1新增用户,添加文件夹</span></h3><p>安装weblogic不能用ROOT用户安装,必须先新增用户  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">adduser weblogic</span><br><span class="line">passwd weblogic</span><br><span class="line"><span class="comment">#切换用户操作</span></span><br><span class="line">su weblogic</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="comment">#新增文件夹,存放weblogic</span></span><br><span class="line"><span class="built_in">mkdir</span> weblogic12c</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3><span id="12创建orainstloc文件">1.2.创建oraInst.loc文件</span></h3><p><em><strong>注意指定inventory_loc路径</strong></em></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi oraInst.loc </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inventory_loc=/home/weblogic/oraInventory</span><br><span class="line">inst_group=weblgoic</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>清单目录中存放的文件名为orainst.loc。如果该文件不存在于您的系统上，则必须在启动静默安装之前创建该文件。安装程序使用此文件。</strong></em></p>
+<h3><span id="13创建响应文件wlsrsp">1.3.创建响应文件wls.rsp</span></h3><p><em><strong>注意指定ORACLE_HOME路径</strong></em></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi wls.rsp </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[ENGINE]</span><br><span class="line"><span class="comment">#DO NOT CHANGE THIS.</span></span><br><span class="line">Response File Version=1.0.0.0.0</span><br><span class="line">[GENERIC]</span><br><span class="line"><span class="comment">#weblogic路径 唯一需要改动的地址</span></span><br><span class="line">ORACLE_HOME=/home/weblogic/weblogic12c/bea</span><br><span class="line"><span class="comment">#Set this variable value to the Installation Type selected. e.g. WebLogic Server, Coherence, Complete with Examples.</span></span><br><span class="line">INSTALL_TYPE=WebLogic Server</span><br><span class="line"><span class="comment">#Provide the My Oracle Support Username. If you wish to ignore Oracle Configuration Manager configuration provide empty string for user name.</span></span><br><span class="line">MYORACLESUPPORT_USERNAME=</span><br><span class="line"><span class="comment">#Provide the My Oracle Support Password</span></span><br><span class="line">MYORACLESUPPORT_PASSWORD=&lt;SECURE VALUE&gt;</span><br><span class="line"><span class="comment">#Set this to true if you wish to decline the security updates. Setting this to true and providing empty string for My Oracle Support username will ignore the Oracle Configuration Manager configuration</span></span><br><span class="line">DECLINE_SECURITY_UPDATES=<span class="literal">true</span></span><br><span class="line"><span class="comment">#Set this to true if My Oracle Support Password is specified</span></span><br><span class="line">SECURITY_UPDATES_VIA_MYORACLESUPPORT=<span class="literal">false</span></span><br><span class="line"><span class="comment">#Provide the Proxy Host</span></span><br><span class="line">PROXY_HOST=</span><br><span class="line"><span class="comment">#Provide the Proxy Port</span></span><br><span class="line">PROXY_PORT=</span><br><span class="line"><span class="comment">#Provide the Proxy Username</span></span><br><span class="line">PROXY_USER=</span><br><span class="line"><span class="comment">#Provide the Proxy Password</span></span><br><span class="line">PROXY_PWD=&lt;SECURE VALUE&gt;</span><br><span class="line"><span class="comment">#Type String (URL format) Indicates the OCM Repeater URL which should be of the format [scheme[Http/Https]]://[repeater host]:[repeater port]</span></span><br><span class="line">COLLECTOR_SUPPORTHUB_URL=</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3><span id="14-安装">1.4. 安装</span></h3><p><em><strong>注意指定wls.rsp和oraInst.loc路径</strong></em></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar fmw_12.2.1.4.0_wls.jar -silent -responseFile/home/weblogic/weblogic12c/wls.rsp -invPtrLoc //home/weblogic/weblogic12c/oraInst.loc  </span><br></pre></td></tr></table></figure>
+
+<h2><span id="2创建域">2.创建域</span></h2><h3><span id="21配置环境变量">2.1配置环境变量</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.bash_profile</span><br><span class="line"><span class="built_in">export</span> MW_HOME=/home/weblogic/weblogic12c/bea</span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<h3><span id="22创建操作">2.2创建操作</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动创建流程</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$MW_HOME</span>/wlserver/common/bin</span><br><span class="line">./wlst.sh </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">wls:/offline&gt; </span><br><span class="line"><span class="comment">#根据实际路径修改</span></span><br><span class="line">wls:/offline&gt; readTemplate(<span class="string">&#x27;/home/weblogic/weblogic12c/bea/wlserver/common/templates/wls/wls.jar&#x27;</span>)</span><br><span class="line">wls:/offline/base_domain&gt; <span class="built_in">cd</span>(<span class="string">&#x27;Servers/AdminServer&#x27;</span>)</span><br><span class="line">wls:/offline/base_domain/Server/AdminServer&gt; <span class="built_in">set</span>(<span class="string">&#x27;ListenAddress&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment">#配置启动端口可能执行失败,继续向下执行,默认端口为7001</span></span><br><span class="line">wls:/offline/base_domain/Server/AdminServer&gt; <span class="built_in">set</span>(<span class="string">&#x27;ListenPort&#x27;</span>, 7001)</span><br><span class="line">wls:/offline/base_domain/Server/AdminServer&gt; <span class="built_in">cd</span>(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">wls:/offline/base_domain&gt; <span class="built_in">cd</span>(<span class="string">&#x27;Security/base_domain/User/weblogic&#x27;</span>)</span><br><span class="line"><span class="comment">#设置启动密码8位以上,包括数字或特殊字符</span></span><br><span class="line">wls:/offline/base_domain/Security/base_domain/User/weblogic&gt; cmo.setPassword(<span class="string">&#x27;weblogic123&#x27;</span>)</span><br><span class="line">wls:/offline/base_domain/Security/base_domain/User/weblogic&gt; setOption(<span class="string">&#x27;OverwriteDomain&#x27;</span>, <span class="string">&#x27;true&#x27;</span>)</span><br><span class="line"><span class="comment">#设置域的路径</span></span><br><span class="line">wls:/offline/base_domain/Security/base_domain/User/weblogic&gt; writeDomain(<span class="string">&#x27;/home/weblogic/weblogic12c/user_projects/armDomain&#x27;</span>)   </span><br><span class="line">wls:/offline/domain/Security/domain/User/weblogic&gt;closeTemplate()</span><br><span class="line">wls:/offline&gt;<span class="built_in">exit</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2><span id="3启动weblogic">3.启动weblogic</span></h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##进入创建的域目录bin下</span></span><br><span class="line"><span class="built_in">cd</span> /home/weblogic/weblogic12c/user_projects/armDomain</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">./startWebLogic.sh </span><br><span class="line"><span class="comment">#后台启动使用</span></span><br><span class="line"><span class="built_in">nohup</span> ./startWebLogic.sh &amp;</span><br><span class="line"><span class="comment">#关闭weblogic</span></span><br><span class="line">./stopWeblogic.sh </span><br></pre></td></tr></table></figure>
+
+<h2><span id="4访问">4.访问</span></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://IP:7100/console</span><br></pre></td></tr></table></figure>
+
+<h2><span id="5安装后问题">5.安装后问题</span></h2><p><code>部署应用保错 &#39;java.lang.OutOfMemoryError: GC overhead limit exceeded&#39;</code></p>
+<p>解决方案：<strong><strong>调大Weblogic的启动内存即可</strong></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#window:</span></span><br><span class="line"><span class="comment">#修改Middleware\Oracle_Home\user_projects\domains\base_domain\startWebLogic.cmd</span></span><br><span class="line"><span class="comment">#在SETLOCAL-ENDLOCAL中新增</span></span><br><span class="line"><span class="built_in">set</span> MEM_ARGS=-Xms512m -Xmx768m</span><br><span class="line"></span><br><span class="line"><span class="comment">#linux</span></span><br><span class="line"><span class="comment">#修改start-WebLogic.sh</span></span><br><span class="line">MEM_ARGS=-Xms512m -Xmx768m</span><br><span class="line"><span class="comment">#修改bin文件夹下的setDomainEnv.sh</span></span><br><span class="line">vim setDomainEnv.sh</span><br><span class="line">WLS_MEM_ARGS_64BIT=<span class="string">&quot;-Xms512m -Xmx1024m&quot;</span></span><br><span class="line">WLS_MEM_ARGS_32BIT=<span class="string">&quot;-Xms512m -Xmx1024m&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="6配置启动脚本">6配置启动脚本</span></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#脚本放到weblogic文件夹下</span></span><br><span class="line"><span class="built_in">cd</span> /home/weblogic</span><br><span class="line"><span class="comment">#新建日志文件夹</span></span><br><span class="line"><span class="built_in">mkdir</span> weblogic-log</span><br><span class="line"></span><br><span class="line">vim start-weblogic.sh</span><br><span class="line"><span class="comment">#编辑</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;weblogic starting...&quot;</span></span><br><span class="line">`<span class="built_in">nohup</span> /home/weblogic/weblogic12c/user_projects/armDomain/startWebLogic.sh &gt; /home/weblogic/weblogic-log/run.log 2&gt;&amp;1 &amp;`</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置权限</span></span><br><span class="line"><span class="built_in">chmod</span> 777 start-weblogic.sh</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">./start-weblogic.sh</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/16/linux/nginx%E5%9C%A8linux%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          nginx安装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/30/databases/Activiti5.22.0%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Activiti5.22.0兼容达梦数据库</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 li
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

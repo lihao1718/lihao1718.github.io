@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Activiti5.22.0兼容达梦数据库 | 记录</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Activiti5.22.0兼容达梦数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activiti5.22.0兼容达梦数据库">
+<meta property="og:url" content="http://li1718.top/2023/05/30/databases/Activiti5.22.0%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="记录">
+<meta property="og:description" content="Activiti5.22.0兼容达梦数据库">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A601.png">
+<meta property="og:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A602.png">
+<meta property="og:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A603.png">
+<meta property="og:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A604.png">
+<meta property="og:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A605.png">
+<meta property="og:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A606.png">
+<meta property="article:published_time" content="2023-05-30T03:31:19.728Z">
+<meta property="article:modified_time" content="2023-06-03T11:57:35.191Z">
+<meta property="article:author" content="li">
+<meta property="article:tag" content="log">
+<meta property="article:tag" content="databases">
+<meta property="article:tag" content="达梦">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://li1718.top/images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A601.png">
+  
+    <link rel="alternative" href="/atom.xml" title="记录" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="img/avatar.gif" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">li</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle"></p>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/databases/" style="font-size: 11.67px;">databases</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/index/" style="font-size: 11.67px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 13.33px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/tool/" style="font-size: 11.67px;">tool</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13.33px;">记录</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="font-size: 18.33px;">软件安装</a> <a href="/tags/%E8%BE%BE%E6%A2%A6/" style="font-size: 10px;">达梦</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="img/avatar.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-databases/Activiti5.22.0兼容达梦数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/05/30/databases/Activiti5.22.0%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+  	<time datetime="2023-05-30T03:31:19.728Z" itemprop="datePublished">2023-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Activiti5.22.0兼容达梦数据库
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/databases/" rel="tag">databases</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/" rel="tag">log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BE%BE%E6%A2%A6/" rel="tag">达梦</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/log/">log</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1><span id="activiti5220兼容达梦数据库">Activiti5.22.0兼容达梦数据库</span></h1><p>修改Activiti源码使Activiti兼容达梦数据库,<br>Activiti版本为5.22.0</p>
+<h2><span id="1-下载源码">1. 下载源码</span></h2><p>代码地址: <code>git@github.com:Activiti/Activiti.git</code><br>切换activiti-engine模块分支至5.22.0:<code>e92ce378</code></p>
+<h2><span id="2-源码修改">2. 源码修改</span></h2><h3><span id="1-在orgactivitiengineimplcfgprocessengineconfigurationimpl增加dm成员变量">1. 在org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl，增加dm成员变量：</span></h3><p><code>public static final String DATABASE_TYPE_DM = &quot;dm&quot;;</code></p>
+<h3><span id="2-在orgactivitiengineimplcfgprocessengineconfigurationimpl修改getdefaultdatabasetypemappings">2. 在org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl，修改getDefaultDatabaseTypeMappings()：</span></h3><p><code>databaseTypeMappings.setProperty(&quot;DM DBMS&quot;, DATABASE_TYPE_DM);</code><br><img src="/../../images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A601.png" alt="ProcessEngineConfigurationImpl" title="ProcessEngineConfigurationImpl">;</p>
+<h3><span id="3-在orgactivitiengineimpldbdbsqlsession增加版本信息">3. 在org.activiti.engine.impl.db.DbSqlSession，增加版本信息</span></h3><p><code>ACTIVITI_VERSIONS.add(new ActivitiVersion(&quot;5.22.0.0&quot;));</code><br><img src="/../../images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A602.png" alt="DbSqlSession" title="DbSqlSession">;</p>
+<h3><span id="4-在orgactivitiengineimpldbdbsqlsessionfactory添加达梦信息">4. 在org.activiti.engine.impl.db.DbSqlSessionFactory,添加达梦信息</span></h3><p>达梦语句与oracle基本一致,信息复制oracle修改名称</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 达梦 dm</span></span><br><span class="line">    databaseSpecificLimitBeforeStatements.put(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;select * from ( select a.*, ROWNUM rnum from (&quot;</span>);</span><br><span class="line">    databaseSpecificLimitAfterStatements.put(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;  ) a where ROWNUM &lt; #&#123;lastRow&#125;) where rnum  &gt;= #&#123;firstRow&#125;&quot;</span>);</span><br><span class="line">    databaseSpecificLimitBetweenStatements.put(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    databaseOuterJoinLimitBetweenStatements.put(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    databaseSpecificOrderByStatements.put(<span class="string">&quot;dm&quot;</span>, defaultOrderBy);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;selectExclusiveJobsToExecute&quot;</span>, <span class="string">&quot;selectExclusiveJobsToExecute_integerBoolean&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;selectUnlockedTimersByDuedate&quot;</span>, <span class="string">&quot;selectUnlockedTimersByDuedate_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;insertEventLogEntry&quot;</span>, <span class="string">&quot;insertEventLogEntry_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertVariableInstance&quot;</span>, <span class="string">&quot;bulkInsertVariableInstance_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertTask&quot;</span>, <span class="string">&quot;bulkInsertTask_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertResource&quot;</span>, <span class="string">&quot;bulkInsertResource_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertProperty&quot;</span>, <span class="string">&quot;bulkInsertProperty_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertProcessDefinition&quot;</span>, <span class="string">&quot;bulkInsertProcessDefinition_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertModel&quot;</span>, <span class="string">&quot;bulkInsertModel_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertTimer&quot;</span>, <span class="string">&quot;bulkInsertTimer_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertMessage&quot;</span>, <span class="string">&quot;bulkInsertMessage_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertIdentityLink&quot;</span>, <span class="string">&quot;bulkInsertIdentityLink_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricVariableInstance&quot;</span>, <span class="string">&quot;bulkInsertHistoricVariableInstance_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricTaskInstance&quot;</span>, <span class="string">&quot;bulkInsertHistoricTaskInstance_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricProcessInstance&quot;</span>, <span class="string">&quot;bulkInsertHistoricProcessInstance_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricIdentityLink&quot;</span>, <span class="string">&quot;bulkInsertHistoricIdentityLink_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricDetailVariableInstanceUpdate&quot;</span>, <span class="string">&quot;bulkInsertHistoricDetailVariableInstanceUpdate_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricFormProperty&quot;</span>, <span class="string">&quot;bulkInsertHistoricFormProperty_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertHistoricActivityInstance&quot;</span>, <span class="string">&quot;bulkInsertHistoricActivityInstance_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertExecution&quot;</span>, <span class="string">&quot;bulkInsertExecution_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertMessageEventSubscription&quot;</span>, <span class="string">&quot;bulkInsertMessageEventSubscription_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertSignalEventSubscription&quot;</span>, <span class="string">&quot;bulkInsertSignalEventSubscription_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertCompensateEventSubscription&quot;</span>, <span class="string">&quot;bulkInsertCompensateEventSubscription_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertEventLogEntry&quot;</span>, <span class="string">&quot;bulkInsertEventLogEntry_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertDeployment&quot;</span>, <span class="string">&quot;bulkInsertDeployment_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertComment&quot;</span>, <span class="string">&quot;bulkInsertComment_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertByteArray&quot;</span>, <span class="string">&quot;bulkInsertByteArray_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertEventLogEntry&quot;</span>, <span class="string">&quot;bulkInsertEventLogEntry_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertDeployment&quot;</span>, <span class="string">&quot;bulkInsertDeployment_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertComment&quot;</span>, <span class="string">&quot;bulkInsertComment_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertAttachment&quot;</span>, <span class="string">&quot;bulkInsertAttachment_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertJob&quot;</span>, <span class="string">&quot;bulkInsertJob_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertTimerJob&quot;</span>, <span class="string">&quot;bulkInsertTimerJob_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertSuspendedJob&quot;</span>, <span class="string">&quot;bulkInsertSuspendedJob_oracle&quot;</span>);</span><br><span class="line">    addDatabaseSpecificStatement(<span class="string">&quot;dm&quot;</span>, <span class="string">&quot;bulkInsertDeadLetterJob&quot;</span>, <span class="string">&quot;bulkInsertDeadLetterJob_oracle&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/../../images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A603.png" alt="DbSqlSessionFactory" title="DbSqlSessionFactory">;</p>
+<h3><span id="5-修改orgactivitiengineimpldbdbsqlsessionfactory-类的-initbulkinsertenabledmapstring-databasetype方法">5. 修改org.activiti.engine.impl.db.DbSqlSessionFactory 类的 initBulkInsertEnabledMap(String databaseType)方法</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">&quot;oracle&quot;</span>.equals(databaseType) || <span class="string">&quot;dm&quot;</span>.equals(databaseType)) &#123;</span><br><span class="line">	bulkInsertableMap.put(EventLogEntryEntity.class, Boolean.FALSE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/../../images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A604.png" alt="DbSqlSessionFactory" title="DbSqlSessionFactory">;</p>
+<h3><span id="6-修改orgactivitiengineimplabstractquery-类的-addorderstring-column-string-sortorder-nullhandlingonorder-nullhandlingonorder方法">6. 修改org.activiti.engine.impl.AbstractQuery 类的 addOrder(String column, String sortOrder, NullHandlingOnOrder nullHandlingOnOrder)方法</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nullHandlingOnOrder.equals(NullHandlingOnOrder.NULLS_FIRST)) &#123;</span><br><span class="line">  			</span><br><span class="line">  			<span class="keyword">if</span> (ProcessEngineConfigurationImpl.DATABASE_TYPE_H2.equals(databaseType)</span><br><span class="line">            || ProcessEngineConfigurationImpl.DATABASE_TYPE_HSQL.equals(databaseType)</span><br><span class="line">  					|| ProcessEngineConfigurationImpl.DATABASE_TYPE_POSTGRES.equals(databaseType)</span><br><span class="line">  					|| ProcessEngineConfigurationImpl.DATABASE_TYPE_ORACLE.equals(databaseType)</span><br><span class="line">                    || ProcessEngineConfigurationImpl.DATABASE_TYPE_DM.equals(databaseType)) &#123;<span class="comment">//达梦</span></span><br><span class="line">  				orderBy = orderBy + defaultOrderByClause + <span class="string">&quot; NULLS FIRST&quot;</span>;</span><br><span class="line">  			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ProcessEngineConfigurationImpl.DATABASE_TYPE_MYSQL.equals(databaseType)) &#123;</span><br><span class="line">    			orderBy = orderBy + <span class="string">&quot;isnull(&quot;</span> + column +<span class="string">&quot;) desc,&quot;</span> + defaultOrderByClause;</span><br><span class="line">    		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ProcessEngineConfigurationImpl.DATABASE_TYPE_DB2.equals(databaseType)</span><br><span class="line">    				|| ProcessEngineConfigurationImpl.DATABASE_TYPE_MSSQL.equals(databaseType)) &#123;</span><br><span class="line">    			orderBy = orderBy + <span class="string">&quot;case when &quot;</span> + column + <span class="string">&quot; is null then 0 else 1 end,&quot;</span> + defaultOrderByClause;</span><br><span class="line">    		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    			orderBy = orderBy + defaultOrderByClause;</span><br><span class="line">    		&#125;</span><br><span class="line">    		</span><br><span class="line">  			</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nullHandlingOnOrder.equals(NullHandlingOnOrder.NULLS_LAST)) &#123;</span><br><span class="line">      	</span><br><span class="line">  			<span class="keyword">if</span> (ProcessEngineConfigurationImpl.DATABASE_TYPE_H2.equals(databaseType)</span><br><span class="line">  			    || ProcessEngineConfigurationImpl.DATABASE_TYPE_HSQL.equals(databaseType)</span><br><span class="line">  					|| ProcessEngineConfigurationImpl.DATABASE_TYPE_POSTGRES.equals(databaseType)</span><br><span class="line">  					|| ProcessEngineConfigurationImpl.DATABASE_TYPE_ORACLE.equals(databaseType)</span><br><span class="line">  					|| ProcessEngineConfigurationImpl.DATABASE_TYPE_DM.equals(databaseType)) &#123;<span class="comment">//达梦</span></span><br><span class="line">  				orderBy = orderBy + column + <span class="string">&quot; &quot;</span>+sortOrder + <span class="string">&quot; NULLS LAST&quot;</span>;</span><br><span class="line">  			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ProcessEngineConfigurationImpl.DATABASE_TYPE_MYSQL.equals(databaseType)) &#123;</span><br><span class="line">    			orderBy = orderBy + <span class="string">&quot;isnull(&quot;</span> + column +<span class="string">&quot;) asc,&quot;</span> + defaultOrderByClause;</span><br><span class="line">    		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ProcessEngineConfigurationImpl.DATABASE_TYPE_DB2.equals(databaseType)</span><br><span class="line">    				|| ProcessEngineConfigurationImpl.DATABASE_TYPE_MSSQL.equals(databaseType)) &#123;</span><br><span class="line">    			orderBy = orderBy + <span class="string">&quot;case when &quot;</span> + column + <span class="string">&quot; is null then 1 else 0 end,&quot;</span> + defaultOrderByClause;</span><br><span class="line">    		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    			orderBy = orderBy + defaultOrderByClause;</span><br><span class="line">    		&#125;</span><br><span class="line">      	</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/../../images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A605.png" alt="AbstractQuery" title="AbstractQuery">;</p>
+<h3><span id="7-新增达梦sql文件">7. 新增达梦sql文件</span></h3><h4><span id="1-复制文件">1. 复制文件</span></h4><p>达梦sql与oracle基本一致 复制oracle文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">复制resources.org.activiti.db.creat目录下</span><br><span class="line">    activiti.oracle.create.engine.sql,</span><br><span class="line">    activiti.oracle.create.history.sql,</span><br><span class="line">    activiti.oracle.create.identity.sql</span><br><span class="line">到同目录下并更名为</span><br><span class="line">    activiti.dm.create.engine.sql</span><br><span class="line">    activiti.dm.create.history.sql</span><br><span class="line">    activiti.dm.create.identity.sql</span><br><span class="line"></span><br><span class="line">复制resources.org.activiti.db.drop目录下</span><br><span class="line">    activiti.oracle.drop.engine.sql</span><br><span class="line">    activiti.oracle.drop.history.sql</span><br><span class="line">    activiti.oracle.drop.identity.sql</span><br><span class="line">到同目录下并更名为</span><br><span class="line">    activiti.dm.drop.engine.sql</span><br><span class="line">    activiti.dm.drop.history.sql</span><br><span class="line">    activiti.dm.drop.identity.sql</span><br></pre></td></tr></table></figure>
+<h3><span id="2-修改sql文件">2. 修改sql文件</span></h3><p>达梦不存在<code>NVARCHAR2</code> 关键字,将复制sql文件中的<code>NVARCHAR2</code> 改为<code>varchar</code>;<br><img src="/../../images/databases/activiti%E5%85%BC%E5%AE%B9%E8%BE%BE%E6%A2%A606.png" alt="sql" title="sql"></p>
+<h1><span id="3-替换jar包">3 替换jar包</span></h1><p>重新打包代码,并替换maven中jar包即可</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/13/linux/weblogic%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%EF%BC%88linux%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/29/linux/docker/docker%E5%AE%89%E8%A3%85oracle/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker安装oracle</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 li
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

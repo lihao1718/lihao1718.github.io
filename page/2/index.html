@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>李浩的学习记录</title>
+  <title>记录</title>
 
   <!-- keywords -->
   
@@ -11,15 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="日常记录">
 <meta property="og:type" content="website">
-<meta property="og:title" content="李浩的学习记录">
+<meta property="og:title" content="记录">
 <meta property="og:url" content="http://li1718.top/page/2/index.html">
-<meta property="og:site_name" content="李浩的学习记录">
+<meta property="og:site_name" content="记录">
 <meta property="og:description" content="日常记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="li">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="李浩的学习记录" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="记录" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -90,7 +90,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/databases/" style="font-size: 10px;">databases</a> <a href="/tags/docker/" style="font-size: 14px;">docker</a> <a href="/tags/index/" style="font-size: 12px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 18px;">jvm</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/log/" style="font-size: 14px;">log</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/redis/" style="font-size: 14px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/tool/" style="font-size: 12px;">tool</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 14px;">记录</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="font-size: 14px;">软件安装</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/databases/" style="font-size: 11.67px;">databases</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/index/" style="font-size: 11.67px;">index</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 13.33px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/tool/" style="font-size: 11.67px;">tool</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13.33px;">记录</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="font-size: 18.33px;">软件安装</a> <a href="/tags/%E8%BE%BE%E6%A2%A6/" style="font-size: 10px;">达梦</a>
 					</div>
 				</section>
 				
@@ -145,6 +145,455 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-linux/docker/docker安装oracle" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/29/linux/docker/docker%E5%AE%89%E8%A3%85oracle/" class="article-date">
+  	<time datetime="2023-04-29T01:54:34.470Z" itemprop="datePublished">2023-04-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/29/linux/docker/docker%E5%AE%89%E8%A3%85oracle/">
+        docker安装oracle
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>拉取镜像：<br><code>docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p>
+<p>下载完成后 查看镜像：<br><code>docker images</code></p>
+<p>创建容器：<br><code>docker run -d -p 1521:1521 --name oracle11g registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p>
+<p>默认启动容器方式(2)<br><code>docker run -d -it -p 1521:1521 --name oracle11g --restart=always registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p>
+<p>持久化启动方式如下(3)： </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -it -p 1521:1521 --name oracle --restart=always --mount <span class="built_in">source</span>=oracle_vol,target=/home/oracle/app/oracle/oradata registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</span><br><span class="line"></span><br><span class="line">一般用默认启动方式就可以了，若是需要将数据保存到本地的采用持久化方式。</span><br><span class="line"></span><br><span class="line">--mount表示要将Host上的路径挂载到容器中。</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span>=oracle_vol为Host的持久化卷，若未提前创建会自动创建，可通过docker volume instpect 【容器名】查看volume的具体位置，target为容器中的路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker错误</span><br><span class="line">docker: Error response from daemon: Conflict. The container name &quot;/oracle11g&quot; is already in use by container &quot;7edb8b99791ff4b298a6fa78a7c57be7cd646ab776883b5e07f670ed3506d7bf&quot;. You have to remove (or rename) that container to be able to reuse that name</span><br><span class="line"></span><br><span class="line">docker stop oracle11g</span><br><span class="line"></span><br><span class="line">这里说一下，命令后面的地址一定要是你下载的镜像地址也就是你拉取镜像名字，否则会出现名字已存在等问题！</span><br><span class="line">如果空间不足可以清理数据：</span><br><span class="line">删除所有dangling数据卷（即无用的Volume）：</span><br><span class="line"></span><br><span class="line">docker volume rm $(docker volume ls -qf dangling=true)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">启动容器</span><br><span class="line"></span><br><span class="line">docker start oracle11g</span><br><span class="line"></span><br><span class="line">进入镜像进行配置</span><br><span class="line"></span><br><span class="line">进入oracle的命令环境中。</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it oracle11g bash</span><br><span class="line"></span><br><span class="line">切换到oracle数据库的root 用户下</span><br><span class="line">su root</span><br><span class="line">密码：helowin</span><br><span class="line"></span><br><span class="line">编辑profile文件配置ORACLE环境变量 </span><br><span class="line"></span><br><span class="line">vi /etc/profile</span><br><span class="line"><span class="built_in">export</span> ORACLE_HOME=/home/oracle/app/oracle/product/11.2.0/dbhome_2</span><br><span class="line"><span class="built_in">export</span> ORACLE_SID=lihao</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$ORACLE_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"> 使配置生效</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line">创建软连接</span><br><span class="line"><span class="built_in">ln</span> -s <span class="variable">$ORACLE_HOME</span>/bin/sqlplus /usr/bin</span><br><span class="line">切换到oracle 用户</span><br><span class="line">这里还要说一下，一定要写中间的内条 - 必须要，否则软连接无效</span><br><span class="line">su - oracle</span><br><span class="line">sqlplus /nolog</span><br><span class="line">conn /as sysdba</span><br><span class="line">修改sys、system用户密码：</span><br><span class="line">alter user system identified by li1718;</span><br><span class="line">alter user sys identified by li1718;</span><br><span class="line">alter profile default <span class="built_in">limit</span> PASSWORD_LIFE_TIME UNLIMITED;</span><br><span class="line">创建用户（可选，根据需要）</span><br><span class="line">用一个具有dba权限的用户登录（sysdba)，然后输入以下语句</span><br><span class="line">create user 用户名 identified by 密码;</span><br><span class="line">create user lihao identified by li1718;</span><br><span class="line">grant connect,resource,dba to <span class="built_in">test</span>;</span><br><span class="line">过程中出现的报错需要输入以下内容：</span><br><span class="line">输入：alter database mount;</span><br><span class="line">输入 ：alter database open;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<p>cd $ORACLE_HOME</p>
+<p>find &#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0 -name listener.ora<br>cd &#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_2&#x2F;network&#x2F;admin<br>vi listener.ora</p>
+<pre><code>设置服务器主机名
+  (ADDRESS = (PROTOCOL = TCP)(HOST = DESKTOP-0PNL4C3)(PORT = 1521))
+</code></pre>
+<p>cd &#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_2&#x2F;bin<br>lsnrctl stop<br>lsnrctl start</p>
+<p>查看oracle版本<br><a target="_blank" rel="noopener" href="https://hub.docker.com/_/oraclelinux">https://hub.docker.com/_/oraclelinux</a><br>下载docker pull doctorkirk&#x2F;oracle-19c<br>docker run -d –name <container_name> -p <host_port>:1521 -e ORACLE_SID&#x3D;<sid> -e ORACLE_PDB&#x3D;<pdb_name> -e ORACLE_PWD&#x3D;<password> <image_name>:<tag></tag></image_name></password></pdb_name></sid></host_port></container_name></p>
+<p>docker run -d -it -p 1521:1521 –restart&#x3D;always –name oracle19C –mount source&#x3D;oracle_vol,target&#x3D;&#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;oradata doctorkirk&#x2F;oracle-19c:latest</p>
+<h1><span id="查看oracle-12c启动日志">查看oracle-12c启动日志</span></h1><p>docker logs -f oracle19C</p>
+<p>docker exec -it oracle19C &#x2F;bin&#x2F;bash</p>
+<p>在容器中打开 SQLPlus：在容器的命令行界面上，使用以下命令打开 SQLPlus：</p>
+<p>sqlplus sys&#x2F;li1718@lihao as sysdba</p>
+<p>docker启动镜像doctorkirk&#x2F;oracle-19c后连接数据库实例未启动<br>可能是未找到启动init.ora文件,<code>STARTUP</code>失败</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span> <span class="keyword">as</span> sysdba</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> STARTUP</span><br><span class="line">ORA<span class="number">-01078</span>: failure <span class="keyword">in</span> processing <span class="keyword">system</span> parameters</span><br><span class="line">LRM<span class="number">-00109</span>: could <span class="keyword">not</span> <span class="keyword">open</span> <span class="keyword">parameter</span> file <span class="string">&#x27;/opt/oracle/product/19c/dbhome_1/dbs/initlihao.ora&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>找到init.ora文件复制到该文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -name *.ora</span><br><span class="line"><span class="built_in">cp</span> /opt/oracle/admin/LIHAO/pfile/init.ora /opt/oracle/product/19c/dbhome_1/dbs/initlihao.ora</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="tag">软件安装</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-tool/pdfjs" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/25/tool/pdfjs/" class="article-date">
+  	<time datetime="2023-04-25T08:52:02.128Z" itemprop="datePublished">2023-04-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/25/tool/pdfjs/">
+        pdfjs使用及问题
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1><span id="pdfjs">pdfjs</span></h1><p>#安装,使用<br>进入官网下载:<a target="_blank" rel="noopener" href="https://mozilla.github.io/pdf.js/">网站</a></p>
+<ol>
+<li>解压缩，里面包含2个目录<ol>
+<li>build目录包含以下内容，其中</li>
+<li>pdf.js是核心文件</li>
+</ol>
+</li>
+<li></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-linux/鸟哥私房菜学习笔记/文件权限" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/20/linux/%E9%B8%9F%E5%93%A5%E7%A7%81%E6%88%BF%E8%8F%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" class="article-date">
+  	<time datetime="2023-04-20T11:39:09.688Z" itemprop="datePublished">2023-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/20/linux/%E9%B8%9F%E5%93%A5%E7%A7%81%E6%88%BF%E8%8F%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/">
+        linux学习-文件权限
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="用户分类">用户分类</span></h2><h3><span id="以文件使用权限划分用户分类">以文件使用权限划分用户分类:</span></h3><p>管理员(root),文件使用者(user),群组成员(group),其他(other)<br>群组存放于’&#x2F;etc&#x2F;group’文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. 新建群组 community</span><br><span class="line">groupadd 群组名</span><br><span class="line">groupadd community</span><br><span class="line">2. 修改群组名</span><br><span class="line">groupmod  -n  修改的群组名 原来的群组名</span><br><span class="line">groupmod  -n community group01</span><br><span class="line">3. 将用户tmp01加入群组</span><br><span class="line">gpasswd  -a 用户名 群组名</span><br><span class="line">gpasswd -a tmp01 group01</span><br><span class="line">4. 用户从组群中删除</span><br><span class="line">gpasswd -d 用户名 群组名</span><br><span class="line">gpasswd -d tmp01 group01</span><br><span class="line">5. 查看用户所属群组</span><br><span class="line"><span class="built_in">groups</span> <span class="comment">#查看当前用户所属群组</span></span><br><span class="line">group 用户名 <span class="comment">#查看用户所属群组</span></span><br></pre></td></tr></table></figure>
+<p>用户存放于’&#x2F;etc&#x2F;passwd’文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 新增用户</span><br><span class="line">2. </span><br></pre></td></tr></table></figure>
+<h3><span id="文件属性栏">文件属性栏</span></h3><p>文件属性一栏共有十个字符<br><code>-rwxrwx---</code><br>第一个字符代表这个文件是“目录、文件或链接文件等等”：</p>
+<ol>
+<li><p>当为[ d ]则是目录，例如上表文件名为“.config”的那一行；</p>
+</li>
+<li><p>当为[ - ]则是文件，例如上表文件名为“initial-setup-ks.cfg”那一行；</p>
+</li>
+<li><p>若是[ l ]则表示为链接文件（link file）；</p>
+</li>
+<li><p>若是[ b ]则表示为设备文件里面的可供储存的周边设备（可随机存取设备）；</p>
+</li>
+<li><p>若是[ c ]则表示为设备文件里面的序列埠设备，例如键盘、鼠标（一次性读取设备）。</p>
+<p> 余下的字符中，以三个为一组，且均为“rwx” 的三个参数的组合。其中，[ r ]代表可读</p>
+</li>
+</ol>
+<p>（read）、[ w ]代表可写（write）、[ x ]代表可执行（execute）。 要注意的是，这三个<br>权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
+<ol>
+<li>第一组为“文件拥有者可具备的权限”；</li>
+<li>第二组为“加入此群组之帐号的权限”；</li>
+<li>第三组为“非本人且没有加入本群组之其他帐号的权限”。</li>
+</ol>
+<h3><span id="改变文件属性与权限">改变文件属性与权限</span></h3><p>chgrp ：改变文件所属群组<br><code>chgrp 群组 文件或目录</code><br>chown ：改变文件拥有者<br><code>chown [-R] 用户 文件或目录</code><br>chmod ：改变文件的权限<br>权限的设置方法有两种， 分别可以使用数字或者是符号来进行权限的变更。<br>Linux文件的基本权限就有九个，分别是owner&#x2F;group&#x2F;others三种身份各有自己的read&#x2F;write&#x2F;execute权限<br>各权限的分数对照表如下：</p>
+<blockquote>
+<p>&gt;r:4 &gt; w:2 &gt; x:1</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-databases/oracle存储过程记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/13/databases/oracle%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" class="article-date">
+  	<time datetime="2023-04-13T14:55:31.541Z" itemprop="datePublished">2023-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/13/databases/oracle%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/">
+        oracle存储过程记录
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>oracle存储过程,记一下<br>建立游标查询A表,循环查询的数据处理后保存b表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">PROCEDURE</span> CREATE_VIEW(acton <span class="keyword">in</span> varchar2,acton2 <span class="keyword">in</span> varchar2,acton3 <span class="keyword">in</span> varchar2)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line">    <span class="comment">--建立游标</span></span><br><span class="line">    <span class="keyword">CURSOR</span> cur_netnode(Aacton <span class="keyword">in</span> varchar2,Aacton3 <span class="keyword">in</span> varchar2) </span><br><span class="line">    <span class="keyword">IS</span></span><br><span class="line">        <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tmp_fetch_data <span class="keyword">where</span> no1 <span class="operator">=</span>Aacton <span class="keyword">and</span> no2 <span class="keyword">in</span> (<span class="keyword">select</span> regexp_substr(Aacton3, <span class="string">&#x27;[^,]+&#x27;</span>, <span class="number">1</span>, level) <span class="keyword">as</span> split_result <span class="keyword">from</span> dual <span class="keyword">connect</span> <span class="keyword">by</span> level <span class="operator">&lt;=</span> length(Aacton3) <span class="operator">-</span>length(replace(Aacton3, <span class="string">&#x27;,&#x27;</span>)) <span class="operator">+</span> <span class="number">1</span>;)<span class="keyword">WHERE</span> code <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>; <span class="comment">--游标sql</span></span><br><span class="line">    v_user cur_netnode<span class="operator">%</span>rowtype; <span class="comment">--定义的行变量，用于接收游标中的数据</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">OPEN</span> cur_netnode(acton,acton3);<span class="comment">--打开游标</span></span><br><span class="line">    loop <span class="comment">--循环开始 </span></span><br><span class="line">        <span class="keyword">fetch</span> cur_netnode <span class="keyword">into</span> v_user; <span class="comment">--从游标中提取数据 </span></span><br><span class="line">        exit <span class="keyword">when</span> cur_netnode<span class="operator">%</span>notfound;<span class="comment">--判断是游标中是否存在数据，不存在退出循环</span></span><br><span class="line">        <span class="comment">---id=时间戳+查询id部分</span></span><br><span class="line">         <span class="keyword">insert</span> <span class="keyword">into</span> tmp_data2(<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;age&#x27;</span>) </span><br><span class="line">         <span class="keyword">values</span>((sysdate <span class="operator">-</span>to_date(<span class="string">&#x27;1970-01-01 08:00:00&#x27;</span>, <span class="string">&#x27;yyyy-mm-dd hh24:mi:ss&#x27;</span>)) <span class="operator">*</span> <span class="number">86400000</span> <span class="operator">+</span> substr(v_user.id,<span class="number">10</span>),v_user.name,v_user.age);</span><br><span class="line"><span class="keyword">END</span> loop; <span class="comment">---结束循环</span></span><br><span class="line">     <span class="keyword">close</span> cur_netnode; <span class="comment">--关闭游标</span></span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/databases/" rel="tag">databases</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/" rel="tag">log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/log/">log</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-linux/定时任务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/13/linux/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="article-date">
+  	<time datetime="2023-04-13T14:45:53.663Z" itemprop="datePublished">2023-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/13/linux/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
+        crontab定时任务
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>新建脚本文件<br><code>vim test.sh</code><br>添加执行权限<br><code>chmod +x test.sh</code><br>新建文件crontest.cron文件</p>
+<p>测试脚本每一分钟执行一次<br> <code>*/1 * * * * /java/./test.sh &gt;&gt; /java/test.log 2&gt;&amp;1</code><br>每晚11:30执行<br><code>30 23 * * * /usr/local/crontab/./sql.sh &gt;&gt; /usr/local/crontab/test.log 2&gt;&amp;1</code><br>  执行</p>
+<p>crontab crontest.cron<br>  crontab -l  # 表示列出所有的定时任务<br>    crontab -r  # 表示删除用户的定时任务，当执行此命令后，所有用户下面的定时任务会被删除，执行crontab -l后会提示用户：“no crontab for admin”<br>     crontab -e #查看编辑脚本</p>
+<p>#每天早上6点10分<br>    <code>10 6 * * * date</code><br>#没两个小时 0<br>    <code>*/2 * * * date</code><br>#晚上11点到早上8点之间每2个小时，早上8点<br>    <code>0 23-7/2,8 * * * date</code><br>#每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点<br>    <code>0 11 4 * mon-wed date</code><br>#1月份一号早上4点<br>    <code>0 4 1 jan * date</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/" rel="tag">log</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/log/">log</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-linux/shell/tomcat启动检测" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/13/linux/shell/tomcat%E5%90%AF%E5%8A%A8%E6%A3%80%E6%B5%8B/" class="article-date">
+  	<time datetime="2023-04-13T07:57:06.095Z" itemprop="datePublished">2023-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/13/linux/shell/tomcat%E5%90%AF%E5%8A%A8%E6%A3%80%E6%B5%8B/">
+        tomcat启动检测
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为防止tomcat启动但项目未能正确运行调用startup.sh 后定时检测index页面是否可以访问</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span>  </span><br><span class="line"></span><br><span class="line">tomcatPath=&quot;/user/apache-tomcat&quot;</span><br><span class="line">binPath=&quot;$tomcatPath/bin&quot;</span><br><span class="line">APP_NAME=&quot;tomcat&quot;</span><br><span class="line"></span><br><span class="line">echo &quot;查询所有tomcat并停止&quot;</span><br><span class="line">pid=`ps -ef|grep $APP_NAME|grep -v grep|awk &#x27;&#123;print $2&#125;&#x27;`</span><br><span class="line"> if [ &quot;$&#123;pid&#125;&quot; ]; then</span><br><span class="line">   for id in $pid</span><br><span class="line">    do</span><br><span class="line">        kill -9 $id</span><br><span class="line">    done</span><br><span class="line">fi</span><br><span class="line">echo &quot;进程已停止&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo &quot;[info][$(date)]准备启动tomcat&quot;</span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">binPath<span class="string">&quot;/startup.sh&quot;</span></span></span><br><span class="line">if [ $? -eq 0 ]; then</span><br><span class="line">    echo &quot;启动命令执行成功........&quot;</span><br><span class="line">    echo &quot;检查tomcat运行状态...&quot;</span><br><span class="line">    for (( i=0; i&lt;12; ++i ))</span><br><span class="line">    do</span><br><span class="line">        if [ $(curl -sIL -w &quot;%&#123;http_code&#125;&quot; -o /dev/null http://localhost:8080/login.html) -eq 200 ];then</span><br><span class="line">            echo &quot;tomcat启动成功&quot;</span><br><span class="line">            break</span><br><span class="line">        else</span><br><span class="line">            if [[ i -eq 11 ]];then</span><br><span class="line">                echo &quot;tomcat启动失败，请查看tomcat日志&quot;</span><br><span class="line">                exit 1</span><br><span class="line">            else</span><br><span class="line">                echo &quot;tomcat正在启动中...&quot;</span><br><span class="line">                sleep 5</span><br><span class="line">            fi</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line">else</span><br><span class="line">    echo &quot;启动命令执行失败.......&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/" rel="tag">log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/" rel="tag">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/log/">log</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-jvm/垃圾回收" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -383,15 +832,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.安装命令:<br><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code><br>也可以使用国内 daocloud 一键安装命令：<br><code>curl -sSL https://get.daocloud.io/docker | sh</code><br>安装成功后，输入docker -v 查看是否成功<br><code>Docker version 20.10.17, build 100c701</code></p>
+        <h2><span id="安装">安装</span></h2><p>1.安装命令:<br><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code><br>也可以使用国内 daocloud 一键安装命令：<br><code>curl -sSL https://get.daocloud.io/docker | sh</code><br>安装成功后，输入docker -v 查看是否成功<br><code>Docker version 20.10.17, build 100c701</code></p>
 <p>在用户权限下docker 命令需要 sudo 否则出现以下问题</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Got permission denied <span class="keyword">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: </span><br><span class="line">Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json: dial unix /var/run/docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
 <p>通过将用户添加到docker用户组可以将sudo去掉，命令如下</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker <span class="comment">#添加docker用户组</span></span><br><span class="line">sudo gpasswd -a <span class="variable">$USER</span> docker <span class="comment">#将登陆用户加入到docker用户组中</span></span><br><span class="line">newgrp docker <span class="comment">#更新用户组</span></span><br></pre></td></tr></table></figure>
 <p>##2.常用命令</p>
-<h4 id="Docker的启动与停止"><a href="#Docker的启动与停止" class="headerlink" title="Docker的启动与停止"></a>Docker的启动与停止</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">systemctl命令是系统服务管理器指令</span><br><span class="line">启动docker：</span><br><span class="line">systemctl start docker</span><br><span class="line">停止docker：</span><br><span class="line">systemctl stop docker</span><br><span class="line">sudo systemctl stop docker.socket</span><br><span class="line">重启docker：</span><br><span class="line">systemctl restart docker</span><br><span class="line">查看docker状态：</span><br><span class="line">systemctl status docker</span><br><span class="line">开机启动：</span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">查看docker概要信息</span><br><span class="line">docker info</span><br><span class="line">查看docker帮助文档</span><br><span class="line">docker ‐‐<span class="built_in">help</span></span><br><span class="line">进入容器</span><br><span class="line">docker <span class="built_in">exec</span> -it [name] bash</span><br></pre></td></tr></table></figure>
-<h4 id="常用镜像命令"><a href="#常用镜像命令" class="headerlink" title="常用镜像命令"></a>常用镜像命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> 查看本机所有镜像:</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">查看已经启动的容器</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">查找某个镜像</span><br><span class="line">docker search xxx</span><br><span class="line"></span><br><span class="line">进入dacker容器</span><br><span class="line">docker attach id</span><br><span class="line">    –filter filter 筛选指令</span><br><span class="line">     如docker search mysql --filter stars=30筛选出点赞数大于30的mysql镜像</span><br><span class="line">    –limit int 搜索结果最大展示数(默认为25)</span><br><span class="line">    –no-trunc 列出详细信息</span><br><span class="line"></span><br><span class="line">进入dacker容器2</span><br><span class="line">docker exec -it db2 bash</span><br><span class="line"></span><br><span class="line">下载/拉取镜像</span><br><span class="line">docker pull xxx：TAG</span><br><span class="line">    若不加TAG则表示为latest版本</span><br><span class="line"></span><br><span class="line">删除镜像</span><br><span class="line">docker rmi xxx</span><br><span class="line">    docker rmi -f 镜像名1:TAG 镜像名2:TAG 删除多个</span><br><span class="line">    docker rmi -f $(docker images -qa) 删除所有</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">停止容器</span><br><span class="line">docker stop CONTAINER_ID</span><br><span class="line"></span><br><span class="line">重命名容器</span><br><span class="line">docker rename 容器ID 新容器名</span><br><span class="line"></span><br><span class="line">docker run 启动容器</span><br><span class="line">--restart=always    当docker重启时，容器也重启</span><br><span class="line">-–name=“容器新名字”: 为容器指定一个名称；</span><br><span class="line">-d: 后台运行容器，并返回容器ID，也即启动守护式容器；</span><br><span class="line">-i：以交互模式运行容器，通常与 -t 同时使用；</span><br><span class="line">-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用；</span><br><span class="line">-e 设置环境变量（此处设置了mysql的密码）</span><br><span class="line">-P: 随机端口映射；</span><br><span class="line">-p: 指定端口映射；</span><br><span class="line"></span><br><span class="line">如:</span><br><span class="line">docker run --restart=always -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1718 mysql:5.6</span><br><span class="line"></span><br><span class="line">如果创建时未指定docker镜像自启动 --restart=always ,可通过update 命令设置</span><br><span class="line">docker update --restart=always xxx</span><br></pre></td></tr></table></figure>
+<h4><span id="docker的启动与停止">Docker的启动与停止</span></h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">systemctl命令是系统服务管理器指令</span><br><span class="line">启动docker：</span><br><span class="line">systemctl start docker</span><br><span class="line">停止docker：</span><br><span class="line">systemctl stop docker</span><br><span class="line">sudo systemctl stop docker.socket</span><br><span class="line">重启docker：</span><br><span class="line">systemctl restart docker</span><br><span class="line">查看docker状态：</span><br><span class="line">systemctl status docker</span><br><span class="line">开机启动：</span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">查看docker概要信息</span><br><span class="line">docker info</span><br><span class="line">查看docker帮助文档</span><br><span class="line">docker ‐‐<span class="built_in">help</span></span><br><span class="line">进入容器</span><br><span class="line">docker <span class="built_in">exec</span> -it [name] bash</span><br></pre></td></tr></table></figure>
+<h4><span id="常用镜像命令">常用镜像命令</span></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> 查看本机所有镜像:</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">查看已经启动的容器</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">查找某个镜像</span><br><span class="line">docker search xxx</span><br><span class="line"></span><br><span class="line">进入dacker容器</span><br><span class="line">docker attach id</span><br><span class="line">    –filter filter 筛选指令</span><br><span class="line">     如docker search mysql --filter stars=30筛选出点赞数大于30的mysql镜像</span><br><span class="line">    –limit int 搜索结果最大展示数(默认为25)</span><br><span class="line">    –no-trunc 列出详细信息</span><br><span class="line"></span><br><span class="line">进入dacker容器2</span><br><span class="line">docker exec -it db2 bash</span><br><span class="line"></span><br><span class="line">下载/拉取镜像</span><br><span class="line">docker pull xxx：TAG</span><br><span class="line">    若不加TAG则表示为latest版本</span><br><span class="line"></span><br><span class="line">删除镜像</span><br><span class="line">docker rmi xxx</span><br><span class="line">    docker rmi -f 镜像名1:TAG 镜像名2:TAG 删除多个</span><br><span class="line">    docker rmi -f $(docker images -qa) 删除所有</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4><span id="容器命令">容器命令</span></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">停止容器</span><br><span class="line">docker stop CONTAINER_ID</span><br><span class="line"></span><br><span class="line">重命名容器</span><br><span class="line">docker rename 容器ID 新容器名</span><br><span class="line"></span><br><span class="line">docker run 启动容器</span><br><span class="line">--restart=always    当docker重启时，容器也重启</span><br><span class="line">-–name=“容器新名字”: 为容器指定一个名称；</span><br><span class="line">-d: 后台运行容器，并返回容器ID，也即启动守护式容器；</span><br><span class="line">-i：以交互模式运行容器，通常与 -t 同时使用；</span><br><span class="line">-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用；</span><br><span class="line">-e 设置环境变量（此处设置了mysql的密码）</span><br><span class="line">-P: 随机端口映射；</span><br><span class="line">-p: 指定端口映射；</span><br><span class="line"></span><br><span class="line">如:</span><br><span class="line">docker run --restart=always -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1718 mysql:5.6</span><br><span class="line"></span><br><span class="line">如果创建时未指定docker镜像自启动 --restart=always ,可通过update 命令设置</span><br><span class="line">docker update --restart=always xxx</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -412,405 +861,6 @@
       
       <div class="clearfix"></div>
     </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-redis/sds" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/09/22/redis/sds/" class="article-date">
-  	<time datetime="2022-09-21T16:13:31.993Z" itemprop="datePublished">2022-09-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/22/redis/sds/">
-        redis核心原理与实践_字符串
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="redisObject"><a href="#redisObject" class="headerlink" title="redisObject"></a>redisObject</h1><h1 id="sds"><a href="#sds" class="headerlink" title="sds"></a>sds</h1><p>代码在sds.h&#x2F;sds.c 文件中</p>
-<h2 id="定义-x2F-结构"><a href="#定义-x2F-结构" class="headerlink" title="定义&#x2F;结构"></a>定义&#x2F;结构</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 短字符串1个字节表示，3位表示类型，2的5次方存储长度的大小也就是len（不是表示内容），长度小于等于（2的5次方-1）个字符串</span></span><br><span class="line"><span class="comment"> * 长字符串 2个字节，len占1字节，free占1字节，长度小于等于（2的8次方-1）个字符串，对应sdshdr8</span></span><br><span class="line"><span class="comment"> * 再长字符串 4个字节，len和free各自占2字节，长度小于等于（2的16次方-1）个字符串，对应sdshdr16</span></span><br><span class="line"><span class="comment"> * 更长字符串 8个字节，len和free各自占4字节，长度小于等于（2的32次方-1）个字符串，对应sdshdr32</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>))<span class="title">sdshdr5</span> &#123;</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 低3位存储类型, 高5位存储长度 flags占1个字节，其低3位（bit）表示type，高5位（bit）表示长度，能表示的长度区间为0～31*/</span></span><br><span class="line">    <span class="type">char</span> buf[];<span class="comment">/*柔性数组，存放实际内容*/</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span>((__<span class="title">packed__</span>))<span class="title">sdshdr8</span> &#123;</span></span><br><span class="line">    <span class="type">uint8_t</span> len; <span class="comment">/* 已使用长度，用1字节存储 */</span></span><br><span class="line">    <span class="type">uint8_t</span> alloc; <span class="comment">/* 总长度，用1字节存储*/</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 低3位存储类型, 高5位预留 */</span></span><br><span class="line">    <span class="type">char</span> buf[];<span class="comment">/*柔性数组，存放实际内容*/</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span>((__<span class="title">packed__</span>))<span class="title">sdshdr16</span> &#123;</span></span><br><span class="line">    <span class="type">uint16_t</span> len; <span class="comment">/*已使用长度，用2字节存储*/</span></span><br><span class="line">    <span class="type">uint16_t</span> alloc; <span class="comment">/* 总长度，用2字节存储*/</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 低3位存储类型, 高5位预留 */</span></span><br><span class="line">    <span class="type">char</span> buf[];<span class="comment">/*柔性数组，存放实际内容*/</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span>((__<span class="title">packed__</span>))<span class="title">sdshdr32</span> &#123;</span></span><br><span class="line">    <span class="type">uint32_t</span> len; <span class="comment">/*已使用长度，用4字节存储*/</span></span><br><span class="line">    <span class="type">uint32_t</span> alloc; <span class="comment">/* 总长度，用4字节存储*/</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags;<span class="comment">/* 低3位存储类型, 高5位预留 */</span></span><br><span class="line">    <span class="type">char</span> buf[];<span class="comment">/*柔性数组，存放实际内容*/</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span>((__<span class="title">packed__</span>))<span class="title">sdshdr64</span> &#123;</span></span><br><span class="line">    <span class="type">uint64_t</span> len; <span class="comment">/*已使用长度，用8字节存储*/</span></span><br><span class="line">    <span class="type">uint64_t</span> alloc; <span class="comment">/* 总长度，用8字节存储*/</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 低3位存储类型, 高5位预留 */</span></span><br><span class="line">    <span class="type">char</span> buf[];<span class="comment">/*柔性数组，存放实际内容*/</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="构建函数"><a href="#构建函数" class="headerlink" title="构建函数"></a>构建函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//init字符串内容  initlen字符串长度  tcmalloc内存分配由google用于优化C++多线程就应用而开发</span></span><br><span class="line">sds _sdsnewlen(<span class="type">const</span> <span class="type">void</span> *init, <span class="type">size_t</span> initlen, <span class="type">int</span> trymalloc) &#123;</span><br><span class="line">    <span class="type">void</span> *sh;</span><br><span class="line">    <span class="comment">//s就是一个字符数组的指针，即结构中的buf。这样设计的好处在于直接对上层提供了字符串内容指针，兼容了部分C函数，且通过偏移能迅速定位到SDS结构体的各处成员变量 。</span></span><br><span class="line">    sds s;</span><br><span class="line">    <span class="comment">//根据字符串长度判断类型</span></span><br><span class="line">    <span class="type">char</span> type = sdsReqType(initlen);</span><br><span class="line">    <span class="comment">//当initlen为0的时候，意味着要申请一个空sds，</span></span><br><span class="line">    <span class="comment">//空字符串大概率之后会append，但sdshdr5不适合用来append，故选择 sdshdr8</span></span><br><span class="line">    <span class="keyword">if</span> (type == SDS_TYPE_5 &amp;&amp; initlen == <span class="number">0</span>) type = SDS_TYPE_8;</span><br><span class="line">    <span class="comment">//查询结构体长度不包括buf  ==&gt; sizeof(len+alloc+flags)</span></span><br><span class="line">    <span class="type">int</span> hdrlen = sdsHdrSize(type);</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> *fp; <span class="comment">/* flags pointer. */</span></span><br><span class="line">    <span class="type">size_t</span> usable;</span><br><span class="line"></span><br><span class="line">    assert(initlen + hdrlen + <span class="number">1</span> &gt; initlen); <span class="comment">/* Catch size_t overflow */</span></span><br><span class="line">    <span class="comment">//s_trymalloc_usable（）尝试分配内存，如果失败，则返回NULL。 如果非NULL，则将 useable 设置为可用大小。</span></span><br><span class="line">    <span class="comment">//s_malloc_usable（）分配内存或紧急/异常情况。 如果非NULL，则将 usable 设置为可用大小。</span></span><br><span class="line">    <span class="comment">//hdrlen+initlen+1 ==&gt; 结构体长度+字符串长度+&#x27;\0&#x27;空字符串 </span></span><br><span class="line">    sh = trymalloc?</span><br><span class="line">        s_trymalloc_usable(hdrlen+initlen+<span class="number">1</span>, &amp;usable) :</span><br><span class="line">        s_malloc_usable(hdrlen+initlen+<span class="number">1</span>, &amp;usable);</span><br><span class="line">         <span class="comment">//这里判断是否需要初始化</span></span><br><span class="line">    <span class="keyword">if</span> (sh == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span> (init==SDS_NOINIT)</span><br><span class="line">        init = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (!init)<span class="comment">//需要初始化</span></span><br><span class="line">    <span class="comment">//先在一段内存块中填充某个给定的值，sh：起始地址; 0:填充的值; hdrlen+initlen+1: 结构体的长度+字符串的长度+&#x27;\0&#x27;</span></span><br><span class="line">        <span class="built_in">memset</span>(sh, <span class="number">0</span>, hdrlen+initlen+<span class="number">1</span>);</span><br><span class="line">    <span class="comment">//指向sds中字符串的指针 字符串位置=sds起始位置+结构体长度</span></span><br><span class="line">    s = (<span class="type">char</span>*)sh+hdrlen;</span><br><span class="line">    <span class="comment">//指向 sds 的 flags  flags位置=字符串位置-1</span></span><br><span class="line">    fp = ((<span class="type">unsigned</span> <span class="type">char</span>*)s)<span class="number">-1</span>;</span><br><span class="line">    usable = usable-hdrlen<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span> (usable &gt; sdsTypeMaxSize(type))</span><br><span class="line">        usable = sdsTypeMaxSize(type);</span><br><span class="line">    <span class="keyword">switch</span>(type) &#123;</span><br><span class="line">        <span class="keyword">case</span> SDS_TYPE_5: &#123;</span><br><span class="line">            *fp = type | (initlen &lt;&lt; SDS_TYPE_BITS);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> SDS_TYPE_8: &#123;</span><br><span class="line">            SDS_HDR_VAR(<span class="number">8</span>,s);</span><br><span class="line">            sh-&gt;len = initlen;</span><br><span class="line">            sh-&gt;alloc = usable;</span><br><span class="line">            *fp = type;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> SDS_TYPE_16: &#123;</span><br><span class="line">            SDS_HDR_VAR(<span class="number">16</span>,s);</span><br><span class="line">            sh-&gt;len = initlen;</span><br><span class="line">            sh-&gt;alloc = usable;</span><br><span class="line">            *fp = type;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> SDS_TYPE_32: &#123;</span><br><span class="line">            SDS_HDR_VAR(<span class="number">32</span>,s);</span><br><span class="line">            sh-&gt;len = initlen;</span><br><span class="line">            sh-&gt;alloc = usable;</span><br><span class="line">            *fp = type;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> SDS_TYPE_64: &#123;</span><br><span class="line">            SDS_HDR_VAR(<span class="number">64</span>,s);</span><br><span class="line">            sh-&gt;len = initlen;</span><br><span class="line">            sh-&gt;alloc = usable;</span><br><span class="line">            *fp = type;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果有指定初始化内容，将它们复制到buf中</span></span><br><span class="line">    <span class="keyword">if</span> (initlen &amp;&amp; init)</span><br><span class="line">        <span class="built_in">memcpy</span>(s, init, initlen);<span class="comment">//将init字符串的initlen个字节复制到buf</span></span><br><span class="line">    s[initlen] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 扩大sds字符串末尾的可用空间，以便调用者确保在调用此函数后，最多可以覆盖addlen字符串末尾后的字节，</span></span><br><span class="line"><span class="comment"> * 再加上一个字节表示nul项。注意：这不会更改返回的sds字符串的*length*通过sdslen（），但只有可用的缓冲区空间。*/</span></span><br><span class="line"><span class="comment">// sds的扩容 s:原sds ,addlen:追加字符串长度</span></span><br><span class="line">sds <span class="title function_">sdsMakeRoomFor</span><span class="params">(sds s, <span class="type">size_t</span> addlen)</span> &#123;</span><br><span class="line">    <span class="type">void</span> *sh, *newsh;</span><br><span class="line">    <span class="comment">//调用sdsvail获取可用空间大小</span></span><br><span class="line">    <span class="type">size_t</span> avail = sdsavail(s);</span><br><span class="line">    <span class="comment">////分别记录原始sds的长度，和新分配的sds长度</span></span><br><span class="line">    <span class="type">size_t</span> len, newlen, reqlen;</span><br><span class="line">    <span class="comment">//分别记录新分配sds的type，和原始sds的type</span></span><br><span class="line">    <span class="type">char</span> type, oldtype = s[<span class="number">-1</span>] &amp; SDS_TYPE_MASK;</span><br><span class="line">    <span class="type">int</span> hdrlen;</span><br><span class="line">    <span class="type">size_t</span> usable;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Return ASAP if there is enough space left. */</span></span><br><span class="line">     <span class="comment">//如果可用空间已经大于addlen，则直接返回s</span></span><br><span class="line">    <span class="keyword">if</span> (avail &gt;= addlen) <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//直接获取字符串长度,复杂度为O(1)</span></span><br><span class="line">    len = sdslen(s);</span><br><span class="line">    sh = (<span class="type">char</span>*)s-sdsHdrSize(oldtype);</span><br><span class="line">    reqlen = newlen = (len+addlen);</span><br><span class="line">    assert(newlen &gt; len);   <span class="comment">/* Catch size_t overflow */</span></span><br><span class="line">    <span class="keyword">if</span> (newlen &lt; SDS_MAX_PREALLOC) <span class="comment">//原字符串长度+addlen如果小于1MB，则分配(原字符串长度+addlen)两倍长的缓冲区</span></span><br><span class="line">        newlen *= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="comment">//否则分配原字符串长度+addlen+1MB长的缓冲区。</span></span><br><span class="line">        newlen += SDS_MAX_PREALLOC;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据字符串长度获取新分配空间大小所对应的类型</span></span><br><span class="line">    type = sdsReqType(newlen);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Don&#x27;t use type 5: the user is appending to the string and type 5 is</span></span><br><span class="line"><span class="comment">     * not able to remember empty space, so sdsMakeRoomFor() must be called</span></span><br><span class="line"><span class="comment">     * at every appending operation. */</span></span><br><span class="line">    <span class="comment">//SDS_TYPE_5 类型不支持扩容操作</span></span><br><span class="line">    <span class="keyword">if</span> (type == SDS_TYPE_5) type = SDS_TYPE_8;</span><br><span class="line">    <span class="comment">//重新计算类型</span></span><br><span class="line">    hdrlen = sdsHdrSize(type);</span><br><span class="line">    assert(hdrlen + newlen + <span class="number">1</span> &gt; reqlen);  <span class="comment">/* Catch size_t overflow */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果和原类型相同直接执行realloc,realloc负责为指定指针重新分配给定大小的空间,尝试在原地址空间重新分配,无法满足要求再重新分配地址空间并进行复制</span></span><br><span class="line">    <span class="comment">//malloc 直接重新申请内存空间,移动sds</span></span><br><span class="line">    <span class="keyword">if</span> (oldtype==type) &#123;</span><br><span class="line">        <span class="comment">//空间大小为对应sdshdr(sds结构体)的大小+新分配缓冲大小+1（字符串结尾’\0’的空间）</span></span><br><span class="line">        newsh = s_realloc_usable(sh, hdrlen+newlen+<span class="number">1</span>, &amp;usable);</span><br><span class="line">        <span class="keyword">if</span> (newsh == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        s = (<span class="type">char</span>*)newsh+hdrlen;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">/* Since the header size changes, need to move the string forward,</span></span><br><span class="line"><span class="comment">         * and can&#x27;t use realloc */</span></span><br><span class="line">        <span class="comment">//如果和原类型不相同，也分配空间大小为对应sdshdr的大小+新分配缓冲大小+1大小的空间</span></span><br><span class="line">        newsh = s_malloc_usable(hdrlen+newlen+<span class="number">1</span>, &amp;usable);</span><br><span class="line">        <span class="keyword">if</span> (newsh == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">         <span class="comment">//旧buf中的数据拷贝进新的buf</span></span><br><span class="line">        <span class="built_in">memcpy</span>((<span class="type">char</span>*)newsh+hdrlen, s, len+<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//释放原结构的内存</span></span><br><span class="line">        s_free(sh);</span><br><span class="line">        s = (<span class="type">char</span>*)newsh+hdrlen;</span><br><span class="line">        <span class="comment">//将原结构中的len和flags赋值给新分配的结构，</span></span><br><span class="line">        s[<span class="number">-1</span>] = type;</span><br><span class="line">        sdssetlen(s, len);</span><br><span class="line">    &#125;</span><br><span class="line">    usable = usable-hdrlen<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span> (usable &gt; sdsTypeMaxSize(type))</span><br><span class="line">        usable = sdsTypeMaxSize(type);</span><br><span class="line">    <span class="comment">//修改alloc参数为新分配缓冲区大小，返回新分配结构的buf的起始地址</span></span><br><span class="line">    sdssetalloc(s, usable);</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/redis/">redis</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-redis/数据结构与对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/09/05/redis/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%AF%B9%E8%B1%A1/" class="article-date">
-  	<time datetime="2022-09-05T12:47:42.058Z" itemprop="datePublished">2022-09-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/05/redis/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%AF%B9%E8%B1%A1/">
-        redis设计与实现_数据结构与对象
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="redis基础数据机构"><a href="#redis基础数据机构" class="headerlink" title="redis基础数据机构"></a>redis基础数据机构</h1><p>Redis 有 5 种基础数据结构，分别为：string (字符串)、list (列表)、set (集合)、hash (哈希) 和 zset (有序集合)。<br>除此之外的数据类型还有Module 和 Stream</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/redis/">redis</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-        <p class="article-more-link">
-          <a  href="/2022/09/05/redis/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%AF%B9%E8%B1%A1/#more">learn more >></a>
-        </p>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-jvm/jvm内存结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/20/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" class="article-date">
-  	<time datetime="2022-08-19T16:33:02.173Z" itemprop="datePublished">2022-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/20/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">
-        jvm内存结构
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h2><p>   如果线程正在执行的是一个Java方法，这个计数器记录的是正在执行的虚拟机字节码指令的地址；如果正在执行的是本地（Native）方法，这个计数器值则应为空（Undefined）。此内存区域是唯 一一个在《Java虚拟机规范》中没有规定任何OutOfMemoryError情况的区域。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/" rel="tag">jvm</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/jvm/">jvm</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-        <p class="article-more-link">
-          <a  href="/2022/08/20/jvm/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/#more">learn more >></a>
-        </p>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-jvm/jvm-list" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/20/jvm/jvm-list/" class="article-date">
-  	<time datetime="2022-08-19T16:33:02.172Z" itemprop="datePublished">2022-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/20/jvm/jvm-list/">
-        jvm 概述
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jvm学习记录登记</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/" rel="tag">jvm</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/jvm/">jvm</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-        <p class="article-more-link">
-          <a  href="/2022/08/20/jvm/jvm-list/#more">learn more >></a>
-        </p>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-java/poi_文本替换,图片替换,转PDF" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/" class="article-date">
-  	<time datetime="2022-08-19T16:33:02.172Z" itemprop="datePublished">2022-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/">
-        记录-poi文本替换,图片替换,转PDF
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="poi文本替换"><a href="#poi文本替换" class="headerlink" title="poi文本替换"></a>poi文本替换</h2><ol>
-<li>word文档中添加字段<br> <code>$&#123;字段名&#125;</code></li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/java/">java</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-        <p class="article-more-link">
-          <a  href="/2022/08/20/java/poi_%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2,%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2,%E8%BD%ACPDF/#more">learn more >></a>
-        </p>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-java/Maven_Jar包冲突" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/20/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/" class="article-date">
-  	<time datetime="2022-08-19T16:33:02.171Z" itemprop="datePublished">2022-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/20/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/">
-        idea解决maven冲突
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="找到冲突jar包"><a href="#找到冲突jar包" class="headerlink" title="找到冲突jar包"></a>找到冲突jar包</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/" rel="tag">maven</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/java/">java</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-        <p class="article-more-link">
-          <a  href="/2022/08/20/java/Maven_Jar%E5%8C%85%E5%86%B2%E7%AA%81/#more">learn more >></a>
-        </p>
       
     
   </div>
