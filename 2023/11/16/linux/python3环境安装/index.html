@@ -17,7 +17,7 @@
 <meta property="og:description" content="python安装">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-16T08:38:03.037Z">
-<meta property="article:modified_time" content="2023-11-16T09:42:02.790Z">
+<meta property="article:modified_time" content="2023-11-16T09:50:41.119Z">
 <meta property="article:author" content="li">
 <meta property="article:tag" content="软件安装">
 <meta property="article:tag" content="linux">
@@ -193,6 +193,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1><span id="python安装">python安装</span></h1><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3612/">python3.6.12</a><br><a target="_blank" rel="noopener" href="https://pypi.org/">python库</a><br><a target="_blank" rel="noopener" href="https://www.zlib.net/zlib-1.3.tar.gz">zlib1.3</a><br><a target="_blank" rel="noopener" href="https://www.openssl.org/source/openssl-1.1.1w.tar.gz">openssl-1.1.1</a></p>
+<span id="more"></span>
+
 <h2><span id="1-前置安装">1. 前置安装</span></h2><p>python安装依赖于gcc、openssl-devel、zlib-devel<br>实际环境存在gcc环境,仅安装openssl-devel、zlib-devel<br><em><strong>前置安装使用root用户操作</strong></em>  </p>
 <h3><span id="11-安装zlib">1.1 安装zlib</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载zlib离线包</span></span><br><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xvf zlib-1.3.tar.gz</span><br><span class="line"><span class="comment">#编译</span></span><br><span class="line">./configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
